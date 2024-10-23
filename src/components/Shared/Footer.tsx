@@ -1,4 +1,3 @@
-// Footer.tsx
 import {
   Flex,
   Heading,
@@ -6,19 +5,69 @@ import {
   Link,
   TextProps,
   LinkProps,
+  HeadingProps,
 } from "@chakra-ui/react";
 import React from "react";
-import { footerData } from "../../data/footerData";
+import { footerData } from "../../data/AppStructureData";
+import type { FooterSection } from "../../types/AppStructureTypes";
 
-// CustomText component for consistent text styling
+// CustomText component for consistent text styling across the footer
+const CustomHeading: React.FC<HeadingProps> = (props) => (
+  <Heading size="lg" mb={8} textAlign="start" {...props} />
+);
+
+// CustomText component for consistent text styling across the footer
 const CustomText: React.FC<TextProps> = (props) => (
   <Text fontSize="2xl" fontWeight="300" textAlign="start" {...props} />
 );
 
+// CustomLinks component for consistent link styling across the footer
 const CustomLinks: React.FC<LinkProps> = (props) => (
   <Link fontSize="2xl" fontWeight="300" textAlign="start" {...props} />
 );
 
+// FooterSection component: responsible for rendering each section of the footer dynamically
+const FooterSection: React.FC<{ section: FooterSection }> = ({ section }) => (
+  <Flex direction="column" align="flex-start" mb={{ base: 8, md: 0 }}>
+    {section.heading ? (
+      // Render the heading if it exists
+      <CustomHeading>{section.heading}</CustomHeading>
+    ) : (
+      // If heading is empty, render a hidden placeholder
+      <CustomHeading visibility="hidden">.</CustomHeading>
+    )}
+
+    {/* Render links if the section contains any */}
+    {section.links && (
+      <Flex direction="column" align="flex-start" gap={2} mb={2}>
+        {section.links.map((link, index) => (
+          <CustomLinks
+            key={index}
+            href={link.url}
+            aria-label={`Visit ${link.name} link`}
+          >
+            {link.name}
+          </CustomLinks>
+        ))}
+      </Flex>
+    )}
+
+    {/* Render text if the section contains any */}
+    {section.text && (
+      <CustomText>
+        {section.text.map((line, index) => (
+          <React.Fragment key={index}>
+            {line}
+            <br />
+          </React.Fragment>
+        ))}
+      </CustomText>
+    )}
+  </Flex>
+);
+
+// Footer component: responsible for rendering the entire footer
+// It dynamically maps through the sections in footerData and renders each section using the FooterSection component
 const Footer: React.FC = () => {
   return (
     <Flex
@@ -31,107 +80,10 @@ const Footer: React.FC = () => {
       wrap="wrap"
       bg="customGray"
     >
-      {/* Visit Us Section */}
-      <Flex
-        direction="column"
-        align="flex-start"
-        mb={{ base: 8, md: 0 }}
-        gap={4}
-      >
-        <Heading size="lg" mb={2}>
-          {footerData.location.heading}
-        </Heading>
-        <CustomText>
-          {footerData.location.text?.length
-            ? footerData.location.text.map((line, index) => (
-                <React.Fragment key={index}>
-                  {line}
-                  <br />
-                </React.Fragment>
-              ))
-            : "No address available."}
-        </CustomText>
-      </Flex>
-
-      {/* Site Map Section */}
-      <Flex
-        direction="column"
-        align="flex-start"
-        mb={{ base: 8, md: 0 }}
-        gap={4}
-      >
-        <Heading size="lg">{footerData.siteMap.heading}</Heading>
-        <Flex direction="column" align="flex-start" gap={2}>
-          {footerData.siteMap.links?.length ? (
-            footerData.siteMap.links?.map((link) => (
-              <CustomLinks
-                key={link.name}
-                href={link.url}
-                aria-label={`Visit our ${link.name} page`}
-              >
-                {link.name}
-              </CustomLinks>
-            ))
-          ) : (
-            <CustomText>No links available.</CustomText>
-          )}
-        </Flex>
-      </Flex>
-
-      {/* Contact Section */}
-      <Flex
-        direction="column"
-        align="flex-start"
-        mb={{ base: 8, md: 0 }}
-        gap={4}
-      >
-        <Heading size="lg">{footerData.contact.heading}</Heading>
-        <Flex direction="column" align="flex-start" gap={2}>
-          {footerData.contact.links?.length ? (
-            footerData.contact.links?.map((link) => (
-              <CustomLinks
-                key={link.name}
-                href={link.url}
-                aria-label={`Contact us via ${link.name} link`}
-              >
-                {link.name}
-              </CustomLinks>
-            ))
-          ) : (
-            <CustomText>No contact links available.</CustomText>
-          )}
-          {footerData.contact.text?.length ? (
-            footerData.contact.text?.map((text) => (
-              <CustomText key={text}>{text}</CustomText>
-            ))
-          ) : (
-            <CustomText>No contact information available.</CustomText>
-          )}
-        </Flex>
-      </Flex>
-
-      {/* Details Section */}
-      <Flex
-        direction="column"
-        align="flex-start"
-        mb={{ base: 8, md: 0 }}
-        gap={4}
-      >
-        {/* Empty Heading for alignment */}
-        <Heading size="lg" visibility="hidden">
-          .
-        </Heading>
-        <CustomText>
-          {footerData.details.text?.length
-            ? footerData.details.text?.map((line, index) => (
-                <React.Fragment key={index}>
-                  {line}
-                  <br />
-                </React.Fragment>
-              ))
-            : "No details available."}
-        </CustomText>
-      </Flex>
+      {/* Dynamically render each section in the footer by mapping through the footerData */}
+      {Object.values(footerData).map((section, index) => (
+        <FooterSection key={index} section={section} />
+      ))}
     </Flex>
   );
 };

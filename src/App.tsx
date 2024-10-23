@@ -7,7 +7,9 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <>
-        <header></header>
+        <header>
+          <Shared.Header />
+        </header>
         <main></main>
         <footer>
           <Shared.Footer />
