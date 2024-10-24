@@ -1,4 +1,4 @@
-import { ContactInfo } from "../types/AppStructureTypes";
+import { ContactInfo } from "../types/generalTypes";
 
 // Ethan Brooks Details
 // Ethan Name & Role

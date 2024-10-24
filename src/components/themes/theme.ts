@@ -4,9 +4,11 @@ const theme = extendTheme({
   fonts: {
     heading: "'League Spartan', serif",
     body: "'League Spartan', serif",
+    cormorantSc: "'Cormorant SC', serif",
   },
   colors: {
     customGray: "#414141",
+    iconGreen: "#1F8787",
   },
 });
 

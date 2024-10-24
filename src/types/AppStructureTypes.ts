@@ -1,25 +1,17 @@
-import type { Links } from "./generalTypes";
+import type { TextLink, ImageLink, ImageAsset } from "./generalTypes";
 
 // Header Types
-export interface HeaderSection {
-  text?: string[];
-  links?: Links[];
-  image?: string;
+export interface Section {
+  heading?: string;
+  text?: string;
+  texts?: string[];
+  textLink?: TextLink;
+  textLinks?: TextLink[];
+  imageAsset?: ImageAsset;
+  imageAssets?: ImageAsset[];
+  imageLink?: ImageLink;
+  imageLinks?: ImageLink[];
 }
-export interface HeaderData {
-  [key: string]: HeaderSection;
-}
-
-// Footer Types
-export interface FooterSection {
-  heading: string;
-  text?: string[];
-  links?: Links[];
-}
-export interface FooterData {
-  [key: string]: FooterSection;
-}
-export interface ContactInfo {
-  email: string;
-  phone: string;
+export interface SectionData {
+  [key: string]: Section;
 }
