@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { footerData } from "../../data/AppStructureData";
-import type { FooterSection } from "../../types/AppStructureTypes";
+import type { Section } from "../../types/appStructureTypes";
 
 // CustomText component for consistent text styling across the footer
 const CustomHeading: React.FC<HeadingProps> = (props) => (
@@ -27,7 +27,7 @@ const CustomLinks: React.FC<LinkProps> = (props) => (
 );
 
 // FooterSection component: responsible for rendering each section of the footer dynamically
-const FooterSection: React.FC<{ section: FooterSection }> = ({ section }) => (
+const FooterSection: React.FC<{ section: Section }> = ({ section }) => (
   <Flex direction="column" align="flex-start" mb={{ base: 8, md: 0 }}>
     {section.heading ? (
       // Render the heading if it exists
@@ -38,9 +38,9 @@ const FooterSection: React.FC<{ section: FooterSection }> = ({ section }) => (
     )}
 
     {/* Render links if the section contains any */}
-    {section.links && (
+    {section.textLinks && (
       <Flex direction="column" align="flex-start" gap={2} mb={2}>
-        {section.links.map((link, index) => (
+        {section.textLinks.map((link, index) => (
           <CustomLinks
             key={index}
             href={link.url}
@@ -53,9 +53,9 @@ const FooterSection: React.FC<{ section: FooterSection }> = ({ section }) => (
     )}
 
     {/* Render text if the section contains any */}
-    {section.text && (
+    {section.texts && (
       <CustomText>
-        {section.text.map((line, index) => (
+        {section.texts?.map((line, index) => (
           <React.Fragment key={index}>
             {line}
             <br />
@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
     <Flex
       as="footer"
       direction={{ base: "column", md: "row" }}
-      px={{ base: 4, md: 16, lg: 24 }}
+      px={{ base: 4, md: 32, lg: 32 }}
       py={14}
       color="white"
       justify="space-between"
