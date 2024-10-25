@@ -1,108 +1,92 @@
 // Section1.tsx
-import { Flex, Heading, Image, HeadingProps, Box } from "@chakra-ui/react";
-import { landingPageData } from "../../data/HomePageData";
+import { Flex, Heading, Text, Image, HeadingProps } from "@chakra-ui/react";
 import { ClickableIconProps, ImageAsset } from "../../types/generalTypes";
+import { Section2Data } from "../../data/HomePageData";
 
 // CustomHeading component for consistent heading styling
 const CustomHeader: React.FC<HeadingProps> = (props) => (
-  <Heading textAlign="center" color="white" {...props} />
+  <Heading
+    textAlign="start"
+    fontWeight="700"
+    color="black"
+    fontSize={["2xl", "4xl", "6xl", "9xl"]}
+    w="100%"
+    {...props}
+  />
+);
+
+// CustomText component for consistent text styling
+const CustomText: React.FC<HeadingProps> = (props) => (
+  <Text
+    textAlign="start"
+    fontWeight="100"
+    color="black"
+    fontSize={["xs", "sm", "md", "3xl"]}
+    lineHeight="1.2"
+    w="100%"
+    p={[2, 4]}
+    {...props}
+  />
 );
 
 // CustomIcon component for consistent icon styling
-const CustomIcon: React.FC<ClickableIconProps> = ({
+const CustomImage: React.FC<ClickableIconProps> = ({
   src,
   alt,
-  heading,
   ...imageProps
 }) => (
-  <Flex
-    direction="column"
-    align="center"
-    justify="center"
-    minW={["80px", "120px", "140px"]}
-  >
-    <Image
-      src={src}
-      alt={alt}
-      boxSize={["40px", "70px", "95px"]}
-      objectFit="cover"
-      p={[2, 4, 6]}
-      bg="iconGreen"
-      {...imageProps}
-    />
-    <CustomHeader
-      size={["xs", "lg", "lg"]}
-      h={["40px", "65px", null]}
-      w={["80px", "140px", "140px"]}
-      fontWeight="300"
-      mt={4}
-    >
-      {heading}
-    </CustomHeader>
-  </Flex>
+  <Image
+    src={src}
+    alt={alt}
+    boxSize={["13vw", "15vw", "15vw", "15vw"]}
+    objectFit="cover"
+    {...imageProps}
+  />
 );
 
 const Section2: React.FC = () => (
-  <Flex direction="column">
-    <Box
-      backgroundImage={landingPageData.pageImage.imageAsset?.image}
-      backgroundSize="cover"
-      backgroundPosition="center"
-      backgroundRepeat="no-repeat"
+  <Flex direction="column" align="center" justify="center" w="100%">
+    {/* Section 2 - Feature Properties Subsection */}
+    <Flex
+      direction="column"
+      align="center"
+      justify="center"
+      // minH={["60vh", "80vh", "100vh"]}
+      py={[6, 8, 12]}
     >
-      <Flex
-        direction="column"
-        align="center"
-        justify="space-between"
-        minH={["40vh", "50vh", "100vh"]}
-        py={["8%", "10%", "10%"]}
-      >
-        {/* Landing Page - Title */}
-        <CustomHeader
-          fontSize={["3xl", "6xl", "9xl"]}
-          fontWeight="700"
-          fontFamily="cormorantSc"
-          textShadow="4px 4px 5px rgba(0, 0, 0, 0.35)"
-          textAlign="center"
-          w="90vw"
-        >
-          {landingPageData.pageTitle?.heading}
-        </CustomHeader>
+      {/* Section 2 - Title */}
+      <CustomHeader textAlign="center">
+        {Section2Data.pageTitle?.heading}
+      </CustomHeader>
+    </Flex>
 
-        {/* Icon Section */}
-        <Flex align="center" justify="center" position="relative">
-          {/* Icon Section - white line */}
-          <Box
-            position="absolute"
-            h={["1px", "1px", "2px"]}
-            w={["60vw", "64vw", "62vw"]}
-            bg="white"
-            top="25%"
-            zIndex="0"
-          />
-
-          {/* Icon Section - row of icons */}
-          <Flex
-            align="center"
-            position="relative"
-            justify="space-between"
-            w={["100%", "100%", "70vw"]}
-            zIndex="1"
-          >
-            {landingPageData.pageIcons?.imageAssets?.map(
-              (icon: ImageAsset, index: number) => (
-                <CustomIcon
-                  key={index}
-                  src={icon.image}
-                  alt={icon.alt}
-                  heading={icon.heading}
-                />
-              )
-            )}
-          </Flex>
+    {/* Section 2 - Location Subsection */}
+    <Flex direction="column" align="center" w={["80vw", "75vw", "75vw"]} py={8}>
+      {/* Section 2 - Grid Images Subsection */}
+      <Flex direction="column" align="center" justify="center" w="100%" mt={8}>
+        {/* Grid Images Subsection - row of grid images */}
+        <Flex direction="row" align="center" justify="space-between" w="100%">
+          {Section2Data.pageGridImages.imageAssets?.map(
+            (icon: ImageAsset, index: number) => (
+              <CustomImage key={index} src={icon.image} alt={icon.alt} />
+            )
+          )}
         </Flex>
       </Flex>
-    </Box>
+
+      {/* Location Subsection - Title and Text */}
+      <Flex
+        direction="row"
+        align="center"
+        justify="center"
+        gap={[2, 4, 6]}
+        w="100%"
+        mt={6}
+      >
+        <CustomHeader>{Section2Data.pageTitle2?.heading}</CustomHeader>
+        <CustomText w="200vw">{Section2Data.pageText?.text}</CustomText>
+      </Flex>
+    </Flex>
   </Flex>
 );
 

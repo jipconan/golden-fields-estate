@@ -24,9 +24,9 @@ const CustomIcon: React.FC<ClickableIconProps> = ({
     <Image
       src={src}
       alt={alt}
-      boxSize={["40px", "70px", "95px"]}
+      boxSize={["40px", "50px", "95px"]}
       objectFit="cover"
-      p={[2, 4, 6]}
+      p={[2, 2, 6]}
       bg="iconGreen"
       {...imageProps}
     />
@@ -54,12 +54,12 @@ const Section1: React.FC = () => (
         direction="column"
         align="center"
         justify="space-between"
-        minH={["40vh", "50vh", "100vh"]}
-        py={["8%", "10%", "10%"]}
+        minH={["40vh", "70vh", "100vh"]}
+        py={["8%", "5%", "7%"]}
       >
         {/* Landing Page - Title */}
         <CustomHeader
-          fontSize={["3xl", "6xl", "9xl"]}
+          fontSize={["2xl", "4xl", "8xl"]}
           fontWeight="700"
           fontFamily="cormorantSc"
           textShadow="4px 4px 5px rgba(0, 0, 0, 0.35)"
