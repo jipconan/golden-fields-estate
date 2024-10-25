@@ -13,22 +13,33 @@ import type { Section } from "../../types/appStructureTypes";
 
 // CustomText component for consistent text styling across the footer
 const CustomHeading: React.FC<HeadingProps> = (props) => (
-  <Heading size="lg" mb={8} textAlign="start" {...props} />
+  <Heading size={["md", "lg", null]} mb={8} textAlign="start" {...props} />
 );
 
 // CustomText component for consistent text styling across the footer
 const CustomText: React.FC<TextProps> = (props) => (
-  <Text fontSize="2xl" fontWeight="300" textAlign="start" {...props} />
+  <Text
+    fontSize={["lg", "2xl", null]}
+    fontWeight="300"
+    textAlign="start"
+    {...props}
+  />
 );
 
 // CustomLinks component for consistent link styling across the footer
 const CustomLinks: React.FC<LinkProps> = (props) => (
-  <Link fontSize="2xl" fontWeight="300" textAlign="start" {...props} />
+  <Link
+    fontSize={["lg", "2xl", null]}
+    fontWeight="300"
+    textAlign="start"
+    aria-label={`Visit ${props["aria-label"]} link`}
+    {...props}
+  />
 );
 
 // FooterSection component: responsible for rendering each section of the footer dynamically
 const FooterSection: React.FC<{ section: Section }> = ({ section }) => (
-  <Flex direction="column" align="flex-start" mb={{ base: 8, md: 0 }}>
+  <Flex direction="column" align="flex-start" mb={[8, 0, null]}>
     {section.heading ? (
       // Render the heading if it exists
       <CustomHeading>{section.heading}</CustomHeading>
@@ -41,11 +52,7 @@ const FooterSection: React.FC<{ section: Section }> = ({ section }) => (
     {section.textLinks && (
       <Flex direction="column" align="flex-start" gap={2} mb={2}>
         {section.textLinks.map((link, index) => (
-          <CustomLinks
-            key={index}
-            href={link.url}
-            aria-label={`Visit ${link.name} link`}
-          >
+          <CustomLinks key={index} href={link.url} aria-label={link.name}>
             {link.name}
           </CustomLinks>
         ))}
@@ -72,8 +79,8 @@ const Footer: React.FC = () => {
   return (
     <Flex
       as="footer"
-      direction={{ base: "column", md: "row" }}
-      px={{ base: 4, md: 32, lg: 32 }}
+      direction={["column", "row", null]}
+      px={[8, 32, 32]}
       py={14}
       color="white"
       justify="space-between"
