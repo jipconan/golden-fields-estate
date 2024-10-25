@@ -1,13 +1,50 @@
-import { ImageAsset, ImageAssetWithHeader } from "../types/generalTypes";
+import { ImageAsset } from "../types/generalTypes";
 
 // Images
+// Landing Page - images
 export const LANDING_IMAGE: ImageAsset = {
   image: "/landing-pages/landingpage_image.jpg",
   alt: "LANDING_IMAGE",
 };
 
+// HomePage - gallery images
+export const GALLERY_SELECTION_IMAGES: ImageAsset[] = [
+  {
+    image: "/images/gallery-selection-1.jpg",
+    alt: "GALLERY_GRID_1",
+  },
+  {
+    image: "/images/gallery-selection-2.jpg",
+    alt: "GALLERY_GRID_2",
+  },
+  {
+    image: "/images/gallery-selection-3.jpg",
+    alt: "GALLERY_GRID_3",
+  },
+];
+
+// HomePage - gallery images
+export const GALLERY_GRID_IMAGES: ImageAsset[] = [
+  {
+    image: "/images/gallery-grid-1.jpg",
+    alt: "GALLERY_GRID_1",
+  },
+  {
+    image: "/images/gallery-grid-2.jpg",
+    alt: "GALLERY_GRID_2",
+  },
+  {
+    image: "/images/gallery-grid-3.jpg",
+    alt: "GALLERY_GRID_3",
+  },
+  {
+    image: "/images/gallery-grid-4.jpg",
+    alt: "GALLERY_GRID_4",
+  },
+];
+
 // Icons
-export const LANDING_ICONS: ImageAssetWithHeader[] = [
+export const LANDING_ICONS: ImageAsset[] = [
   {
     image: "/icons/city_icon.svg",
     alt: "CITY_ICON",
