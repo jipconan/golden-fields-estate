@@ -1,7 +1,7 @@
 // Section1.tsx
 import { Flex, Heading, Image, HeadingProps, Box } from "@chakra-ui/react";
-import { landingPageData } from "../../data/HomePageData";
-import { ClickableIconProps, ImageAsset } from "../../types/generalTypes";
+import { landingPageData } from "../../../data/HomePageData";
+import { ClickableIconProps, ImageAsset } from "../../../types/generalTypes";
 
 // CustomHeading component for consistent heading styling
 const CustomHeader: React.FC<HeadingProps> = (props) => (

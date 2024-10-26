@@ -27,6 +27,9 @@ export const Section2Data: SectionData = {
   pageTitle: {
     heading: "Feature Properties",
   },
+  pageText: {
+    text: "Discover our top picks of the week! These properties offer exceptional value, prime locations, and unique features.",
+  },
   pageGalleryImages: {
     imageAssets: GALLERY_SELECTION_IMAGES,
   },
@@ -36,7 +39,7 @@ export const Section2Data: SectionData = {
   pageTitle2: {
     heading: "Location",
   },
-  pageText: {
+  pageText2: {
     text: "Discover the vibrant neighborhood surrounding our featured properties! Enjoy a mix of shops, restaurants, and parks, along with easy access to public transportation and major highways.",
   },
 };

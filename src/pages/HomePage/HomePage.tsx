@@ -7,6 +7,7 @@ const HomePage: React.FC = () => {
     <Flex direction="column" width="100%" height="100%">
       <Section.Section1 />
       <Section.Section2 />
+      <Section.Section3 />
     </Flex>
   );
 };
