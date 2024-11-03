@@ -5,7 +5,7 @@ import { ClickableIconProps, ImageAsset } from "../../../types/generalTypes";
 
 // CustomHeading component for consistent heading styling
 const CustomHeader: React.FC<HeadingProps> = (props) => (
-  <Heading textAlign="center" color="white" {...props} />
+  <Heading textAlign="center" color="white" w="100%" {...props} />
 );
 
 // CustomIcon component for consistent icon styling
@@ -15,27 +15,24 @@ const CustomIcon: React.FC<ClickableIconProps> = ({
   heading,
   ...imageProps
 }) => (
-  <Flex
-    direction="column"
-    align="center"
-    justify="center"
-    minW={["80px", "120px", "140px"]}
-  >
+  <Flex direction="column" align="center" justify="center" h="auto" w="auto">
     <Image
       src={src}
       alt={alt}
-      boxSize={["40px", "50px", "95px"]}
       objectFit="cover"
-      p={[2, 2, 6]}
+      p={[4, 2, 2]}
       bg="iconGreen"
+      h="auto"
+      w="auto"
+      blockSize={["150px", "80px", "100px"]}
       {...imageProps}
     />
     <CustomHeader
-      size={["xs", "lg", "lg"]}
-      h={["40px", "65px", null]}
-      w={["80px", "140px", "140px"]}
+      size={["2xl", "lg", "lg"]}
+      h="auto"
+      w={["200px", "140px", "140px"]}
       fontWeight="300"
-      mt={4}
+      mt={8}
     >
       {heading}
     </CustomHeader>
@@ -43,67 +40,77 @@ const CustomIcon: React.FC<ClickableIconProps> = ({
 );
 
 const Section1: React.FC = () => (
-  <Flex direction="column">
-    <Box
-      backgroundImage={landingPageData.pageImage.imageAsset?.image}
-      backgroundSize="cover"
-      backgroundPosition="center"
-      backgroundRepeat="no-repeat"
+  <Box
+    backgroundImage={landingPageData.pageImage.imageAsset?.image}
+    backgroundSize="cover"
+    backgroundPosition="center"
+    backgroundRepeat="no-repeat"
+    w="100%"
+    h="100%"
+  >
+    <Flex
+      direction="column"
+      align="center"
+      justify="space-between"
+      py={["50%", "5%", "7%"]}
+      w="auto"
+      h="100%"
     >
-      <Flex
-        direction="column"
-        align="center"
-        justify="space-between"
-        minH={["40vh", "70vh", "100vh"]}
-        py={["8%", "5%", "7%"]}
+      {/* Landing Page - Title */}
+      <CustomHeader
+        fontSize={["150px", "7xl", "8xl"]}
+        fontWeight="700"
+        fontFamily="cormorantSc"
+        textShadow={[
+          "8px 12px 15px rgba(0, 0, 0, 0.85)",
+          "4px 4px 5px rgba(0, 0, 0, 0.5)",
+        ]}
+        textAlign="center"
       >
-        {/* Landing Page - Title */}
-        <CustomHeader
-          fontSize={["2xl", "4xl", "8xl"]}
-          fontWeight="700"
-          fontFamily="cormorantSc"
-          textShadow="4px 4px 5px rgba(0, 0, 0, 0.35)"
-          textAlign="center"
-          w="90vw"
+        {landingPageData.pageTitle?.heading}
+      </CustomHeader>
+
+      {/* Icon Section */}
+      <Flex
+        align="center"
+        justify="center"
+        position="relative"
+        h="auto"
+        w={["90%", "70%", "70%"]}
+      >
+        {/* Icon Section - white line */}
+        <Box
+          position="absolute"
+          h={["1px", "1px", "2px"]}
+          w="90%"
+          bg="white"
+          top="25%"
+          zIndex="0"
+        />
+
+        {/* Icon Section - row of icons */}
+        <Flex
+          align="center"
+          position="relative"
+          justify="space-between"
+          h="auto"
+          w="100%"
+          zIndex="1"
         >
-          {landingPageData.pageTitle?.heading}
-        </CustomHeader>
-
-        {/* Icon Section */}
-        <Flex align="center" justify="center" position="relative">
-          {/* Icon Section - white line */}
-          <Box
-            position="absolute"
-            h={["1px", "1px", "2px"]}
-            w={["60vw", "64vw", "62vw"]}
-            bg="white"
-            top="25%"
-            zIndex="0"
-          />
-
-          {/* Icon Section - row of icons */}
-          <Flex
-            align="center"
-            position="relative"
-            justify="space-between"
-            w={["100%", "100%", "70vw"]}
-            zIndex="1"
-          >
-            {landingPageData.pageIcons?.imageAssets?.map(
-              (icon: ImageAsset, index: number) => (
-                <CustomIcon
-                  key={index}
-                  src={icon.image}
-                  alt={icon.alt}
-                  heading={icon.heading}
-                />
-              )
-            )}
-          </Flex>
+          {landingPageData.pageIcons?.imageAssets?.map(
+            (icon: ImageAsset, index: number) => (
+              <CustomIcon
+                key={index}
+                src={icon.image}
+                alt={icon.alt}
+                heading={icon.heading}
+              />
+            )
+          )}
         </Flex>
       </Flex>
-    </Box>
-  </Flex>
+    </Flex>
+  </Box>
 );
 
 export default Section1;

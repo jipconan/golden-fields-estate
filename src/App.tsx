@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, Flex } from "@chakra-ui/react";
 import "./App.css";
 import * as Shared from "./components/Shared";
 import * as Pages from "./pages";
@@ -15,7 +15,13 @@ function App() {
 
   return (
     <ChakraProvider theme={theme}>
-      <div style={{ width: `calc(100vw - ${scrollbarWidth}px)` }}>
+      <Flex
+        direction="column"
+        style={{
+          width: `calc(100vw - ${scrollbarWidth}px)`,
+          minWidth: "700px",
+        }}
+      >
         <header>
           <Shared.Header />
         </header>
@@ -27,7 +33,7 @@ function App() {
         </footer>
 
         <Shared.ContactFabGroup />
-      </div>
+      </Flex>
     </ChakraProvider>
   );
 }

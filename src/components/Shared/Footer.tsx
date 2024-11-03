@@ -13,15 +13,17 @@ import type { Section } from "../../types/appStructureTypes";
 
 // CustomText component for consistent text styling across the footer
 const CustomHeading: React.FC<HeadingProps> = (props) => (
-  <Heading size={["md", "lg", null]} mb={8} textAlign="start" {...props} />
+  <Heading size={["4xl", "lg", "2xl"]} mb={8} textAlign="start" {...props} />
 );
 
 // CustomText component for consistent text styling across the footer
 const CustomText: React.FC<TextProps> = (props) => (
   <Text
-    fontSize={["lg", "2xl", null]}
+    fontSize={["6xl", "md", "2xl"]}
     fontWeight="300"
     textAlign="start"
+    w="auto"
+    h="auto"
     {...props}
   />
 );
@@ -29,17 +31,26 @@ const CustomText: React.FC<TextProps> = (props) => (
 // CustomLinks component for consistent link styling across the footer
 const CustomLinks: React.FC<LinkProps> = (props) => (
   <Link
-    fontSize={["lg", "2xl", null]}
+    fontSize={["6xl", "md", "2xl"]}
     fontWeight="300"
     textAlign="start"
     aria-label={`Visit ${props["aria-label"]} link`}
+    w="auto"
+    h="auto"
     {...props}
   />
 );
 
 // FooterSection component: responsible for rendering each section of the footer dynamically
 const FooterSection: React.FC<{ section: Section }> = ({ section }) => (
-  <Flex direction="column" align="flex-start" mb={[8, 0, null]}>
+  <Flex
+    direction="column"
+    align="flex-start"
+    m={[8, 0, null]}
+    px={[12, 0, 0]}
+    w="auto"
+    h="auto"
+  >
     {section.heading ? (
       // Render the heading if it exists
       <CustomHeading>{section.heading}</CustomHeading>
@@ -50,7 +61,14 @@ const FooterSection: React.FC<{ section: Section }> = ({ section }) => (
 
     {/* Render links if the section contains any */}
     {section.textLinks && (
-      <Flex direction="column" align="flex-start" gap={2} mb={2}>
+      <Flex
+        direction="column"
+        align="flex-start"
+        gap={[12, 2]}
+        mb={2}
+        w="auto"
+        h="auto"
+      >
         {section.textLinks.map((link, index) => (
           <CustomLinks key={index} href={link.url} aria-label={link.name}>
             {link.name}
@@ -80,12 +98,15 @@ const Footer: React.FC = () => {
     <Flex
       as="footer"
       direction={["column", "row", null]}
-      px={[8, 32, 32]}
-      py={14}
+      px={[8, 12, 32]}
+      py={[36, 14, 14]}
       color="white"
       justify="space-between"
-      wrap="wrap"
       bg="customGray"
+      w="auto"
+      h="auto"
+      minW="1200px"
+      gap={[24, 0, 0]}
     >
       {/* Dynamically render each section in the footer by mapping through the footerData */}
       {Object.values(footerData).map((section, index) => (
