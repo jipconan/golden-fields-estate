@@ -15,12 +15,16 @@ const CustomImage: React.FC<ClickableImageProps> = ({
     pointerEvents={pointerEvents}
     alignContent="center"
     justifyContent="center"
+    w="auto"
+    h="auto"
   >
     <Image
-      maxBlockSize="25px"
-      objectFit="cover"
-      h="100px"
-      my={[2, 0, null]}
+      objectFit={["cover", "contain"]}
+      align="start"
+      justify="start"
+      w={["700px", "200px"]}
+      h={["auto", "auto"]}
+      my={[8, 0]}
       {...imageProps}
     />
   </Link>
@@ -29,10 +33,11 @@ const CustomImage: React.FC<ClickableImageProps> = ({
 // CustomLinks component for consistent link styling across the header
 const CustomLinks: React.FC<LinkProps> = (props) => (
   <Link
-    fontSize={["lg", "lg", "2xl"]}
+    fontSize={["6xl", "2xl"]}
     fontWeight="300"
-    textAlign="start"
-    w={["80px", "100px"]}
+    textAlign={["start", "center"]}
+    w="auto"
+    h="auto"
     color="black"
     aria-label={`Visit ${props["aria-label"]} link`}
     {...props}
@@ -54,9 +59,15 @@ const Header: React.FC<SectionData> = () => {
   return (
     <Flex
       as="header"
-      direction={["column", "row", null]}
-      p={4}
+      direction={["column", "row"]}
       justify="space-between"
+      align={["start", "center"]}
+      gap={[8, 0]}
+      w="auto"
+      h="auto"
+      minW={[null, "1200px"]}
+      minH={[null, "10vh"]}
+      p={[12, 8]}
     >
       {/* Header Logo */}
       <HeaderLogo />
@@ -64,12 +75,12 @@ const Header: React.FC<SectionData> = () => {
       {/* Header Links */}
       {headerData.headerLinks && (
         <Flex
-          direction={["column", "row", null]}
+          direction={["column", "row", "row"]}
           justify="space-between"
-          wrap="wrap"
           bg="white"
-          w="40vw"
-          my={[2, 0, null]}
+          w={["auto", "70vw", "50vw"]}
+          h="auto"
+          gap={[8, 0]}
         >
           {/* Map through the links in headerData.headerLinks and render them */}
           {headerData.headerLinks?.textLinks &&

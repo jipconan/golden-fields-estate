@@ -18,6 +18,8 @@ export type ImageLink = {
 
 export interface ClickableImageProps extends ImageProps {
   href?: string;
+  src?: string;
+  alt?: string;
   linkProps?: LinkProps;
 }
 
