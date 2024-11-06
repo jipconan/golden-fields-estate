@@ -13,7 +13,7 @@ const CustomImage: React.FC<ClickableIconProps> = ({
   <Image
     src={src}
     alt={alt}
-    boxSize={["200px", "25vw", "14vw"]}
+    boxSize={["150px", "18vw"]}
     objectFit="cover"
     {...imageProps}
   />
@@ -25,7 +25,8 @@ const Section2: React.FC = () => (
     align="center"
     justify="center"
     w="100%"
-    h="100%"
+    h={["100%", "100vh"]}
+    minH={[null, "1200px"]}
     py={["20%", 0]}
   >
     {/* Section 2 - Feature Properties Subsection */}
@@ -37,7 +38,7 @@ const Section2: React.FC = () => (
         direction="row"
         align="center"
         justify="space-between"
-        w={["85%", "80%", "70%"]}
+        w={["85%", "80%"]}
         h="100%"
       >
         {Section2Data.pageGridImages.imageAssets?.map(

@@ -22,8 +22,8 @@ const CustomImage: React.FC<ClickableImageProps> = ({
       objectFit={["cover", "contain"]}
       align="start"
       justify="start"
-      w={["700px", "200px"]}
-      h={["auto", "auto"]}
+      w={["auto", "140px"]}
+      h={["60px", "auto"]}
       my={[8, 0]}
       {...imageProps}
     />
@@ -33,7 +33,7 @@ const CustomImage: React.FC<ClickableImageProps> = ({
 // CustomLinks component for consistent link styling across the header
 const CustomLinks: React.FC<LinkProps> = (props) => (
   <Link
-    fontSize={["6xl", "2xl"]}
+    fontSize={["4xl", "2xl"]}
     fontWeight="300"
     textAlign={["start", "center"]}
     w="auto"
@@ -65,7 +65,6 @@ const Header: React.FC<SectionData> = () => {
       gap={[8, 0]}
       w="auto"
       h="auto"
-      minW={[null, "1200px"]}
       minH={[null, "10vh"]}
       p={[12, 8]}
     >
@@ -75,11 +74,12 @@ const Header: React.FC<SectionData> = () => {
       {/* Header Links */}
       {headerData.headerLinks && (
         <Flex
-          direction={["column", "row", "row"]}
+          direction={["column", "row"]}
           justify="space-between"
           bg="white"
-          w={["auto", "70vw", "50vw"]}
+          w={["auto", "40vw"]}
           h="auto"
+          minW={[null, "400px"]}
           gap={[8, 0]}
         >
           {/* Map through the links in headerData.headerLinks and render them */}
@@ -97,8 +97,8 @@ const Header: React.FC<SectionData> = () => {
       {/* Same Header Logo but Invisible & Unclickable set as the last element in the header */}
       {/* This allows to offset an empty column on the right side of the header with the same size */}
       <HeaderLogo
-        visibility={[null, "hidden", null]}
-        display={["none", "block", null]}
+        visibility={[null, "hidden"]}
+        display={["none", "block"]}
         pointerEvents="none"
       />
     </Flex>

@@ -17,10 +17,8 @@ function App() {
     <ChakraProvider theme={theme}>
       <Flex
         direction="column"
-        style={{
-          width: `calc(100vw - ${scrollbarWidth}px)`,
-          minWidth: "700px",
-        }}
+        w={["100%", `calc(100vw - ${scrollbarWidth}px)`]}
+        minW={["100vw", "800px"]}
       >
         <header>
           <Shared.Header />

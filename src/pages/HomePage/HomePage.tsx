@@ -8,10 +8,10 @@ const CustomFlex: React.FC<FlexProps> = (props) => (
     direction="column"
     align="center"
     justify="center"
-    minH="800px"
-    minW="1200px"
-    h={["2200px", "100vh"]}
-    w="auto"
+    w="100%"
+    h="100%"
+    minW={["850px", "20vw"]}
+    minH={[null, "600px"]}
     border="1px solid black"
     {...props}
   />

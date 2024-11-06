@@ -14,10 +14,10 @@ const CustomImage: React.FC<ClickableImageProps> = ({
     <Image
       src={src}
       alt="Contact Logo"
-      boxSize={["50px", "70px", "80px"]}
+      boxSize={["50px", "80px"]}
       objectFit="cover"
       my={2}
-      p={[2, 5, 6]}
+      p={[2, 6]}
       borderRadius="50%"
       bg="iconGreen"
       {...imageProps}
@@ -33,7 +33,7 @@ const ContactFABGroup: React.FC<SectionData> = () => {
       p={2}
       justify="space-between"
       position="fixed"
-      display={["none", "none", "block"]}
+      display={["none", "block"]}
       bottom="20px"
       right="20px"
       zIndex="1000"

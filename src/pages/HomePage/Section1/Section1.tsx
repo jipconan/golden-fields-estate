@@ -24,13 +24,13 @@ const CustomIcon: React.FC<ClickableIconProps> = ({
       bg="iconGreen"
       h="auto"
       w="auto"
-      blockSize={["150px", "80px", "100px"]}
+      blockSize={["150px", "100px"]}
       {...imageProps}
     />
     <CustomHeader
-      size={["2xl", "lg", "lg"]}
+      size={["2xl", "lg"]}
       h="auto"
-      w={["200px", "140px", "140px"]}
+      w={["200px", "140px"]}
       fontWeight="300"
       mt={8}
     >
@@ -46,19 +46,20 @@ const Section1: React.FC = () => (
     backgroundPosition="center"
     backgroundRepeat="no-repeat"
     w="100%"
-    h="100%"
+    h={["100%", "100vh"]}
+    minH={[null, "600px"]}
   >
     <Flex
       direction="column"
       align="center"
       justify="space-between"
-      py={["50%", "5%", "7%"]}
+      py={["50%", "8%"]}
       w="auto"
       h="100%"
     >
       {/* Landing Page - Title */}
       <CustomHeader
-        fontSize={["150px", "7xl", "8xl"]}
+        fontSize={["150px", "8xl"]}
         fontWeight="700"
         fontFamily="cormorantSc"
         textShadow={[
@@ -76,12 +77,12 @@ const Section1: React.FC = () => (
         justify="center"
         position="relative"
         h="auto"
-        w={["90%", "70%", "70%"]}
+        w={["90%", "70%"]}
       >
         {/* Icon Section - white line */}
         <Box
           position="absolute"
-          h={["1px", "1px", "2px"]}
+          h={["1px", "2px"]}
           w="90%"
           bg="white"
           top="25%"
