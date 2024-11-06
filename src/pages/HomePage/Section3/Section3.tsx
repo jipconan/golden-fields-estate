@@ -28,9 +28,16 @@ const CustomText: React.FC<HeadingProps> = (props) => (
 
 const Section3: React.FC = () => {
   return (
-    <Flex direction="column" align="center" justify="center" w="100%" my={8}>
+    <Flex
+      direction="column"
+      align="center"
+      justify="center"
+      w="100%"
+      h="100%"
+      my={8}
+    >
       {/* Section 2 - Location Subsection */}
-      <Flex direction="column" align="center" w={["80vw", "75vw", "75vw"]}>
+      <Flex direction="column" align="center" w={["80vw", "75vw"]}>
         {/* Location Subsection - Title and Text */}
         <Flex
           direction="row"
@@ -40,7 +47,7 @@ const Section3: React.FC = () => {
           w="100%"
         >
           <CustomHeader>{Section2Data.pageTitle2?.heading}</CustomHeader>
-          <CustomText w="200vw" fontSize={["xs", "sm", "md", "3xl"]}>
+          <CustomText w="200vw" fontSize={["xs", "3xl"]}>
             {Section2Data.pageText2?.text}
           </CustomText>
         </Flex>

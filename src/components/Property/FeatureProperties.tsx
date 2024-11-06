@@ -17,9 +17,11 @@ const CustomHeader: React.FC<HeadingProps> = (props) => (
     textAlign="center"
     fontWeight="700"
     color="black"
-    fontSize={["120px", "8xl", "8xl"]}
+    fontSize={["9xl", "9xl"]}
     h="auto"
     w="auto"
+    lineHeight="0.85"
+    mb={8}
     {...props}
   />
 );
@@ -33,7 +35,7 @@ const CustomText: React.FC<HeadingProps> = (props) => (
     lineHeight="1.4"
     h="auto"
     w="auto"
-    fontSize={["50px", "lg", "3xl"]}
+    fontSize={["50px", "3xl"]}
     textOverflow="clip"
     mb={4}
     maxW="85%"
@@ -53,7 +55,7 @@ const CustomImage: React.FC<ClickableIconProps> = ({
     objectFit="cover"
     w="100%"
     h="100%"
-    blockSize={["600px", "200px", "250px"]}
+    blockSize={["600px", "250px"]}
     transition="transform 0.3s ease-in-out"
     {...imageProps}
   />
@@ -90,10 +92,10 @@ const FeatureProperties: React.FC = () => {
         {/* Gallery Images */}
         <Flex
           direction="row"
-          justify={["center", "center", "space-between"]}
-          w={["80%", "80%", "80%"]}
+          justify={["center", "space-between"]}
+          w={["80%", "80%"]}
           h="100%"
-          my={[48, 2, 8]}
+          my={[48, 2]}
         >
           {Section2Data.pageGalleryImages.imageAssets?.map(
             (imageAsset, index) => (
@@ -122,13 +124,13 @@ const FeatureProperties: React.FC = () => {
           justify="center"
           w="100%"
           h="100%"
-          gap={[24, 12, 4]}
-          my={4}
+          gap={[24, 12]}
+          my={[4, 8]}
         >
           {Section2Data.pageGalleryImages.imageAssets?.map((_, index) => (
             <Circle
               key={index}
-              size={["40px", "24px", "16px"]}
+              size={["40px", "18px"]}
               bg={selectedIndex === index ? "blue.500" : "gray.300"}
               cursor="pointer"
               onClick={() => setSelectedIndex(index)}
