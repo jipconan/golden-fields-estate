@@ -43,3 +43,18 @@ export const Section2Data: SectionData = {
     text: "Discover the vibrant neighborhood surrounding our featured properties! Enjoy a mix of shops, restaurants, and parks, along with easy access to public transportation and major highways.",
   },
 };
+
+export const Section4Data: SectionData = {
+  pageTitle: {
+    heading: "Golden Fields",
+  },
+  pageText: {
+    text: "Team",
+  },
+  pageTitle2: {
+    heading: "Meet Our Agents",
+  },
+  pageText2: {
+    text: "Meet our dedicated real estate team! With unique expertise and a passion for helping you find the perfect property, we’re here to guide you with deep local knowledge and exceptional service.",
+  },
+};

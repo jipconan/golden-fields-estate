@@ -53,7 +53,7 @@ const Section1: React.FC = () => (
       direction="column"
       align="center"
       justify="space-between"
-      py={["50%", "8%"]}
+      py={["50%", "2%"]}
       w="auto"
       h="100%"
     >

@@ -1,6 +1,7 @@
 // HomePage.tsx
 import { Flex, FlexProps } from "@chakra-ui/react";
 import * as Section from "./index";
+import Section6 from "./Section6/Section6";
 
 // CustomFlex component for consistent section styling
 const CustomFlex: React.FC<FlexProps> = (props) => (
@@ -27,6 +28,7 @@ const HomePage: React.FC = () => {
           <SectionComponent />
         </CustomFlex>
       ))}
+      <Section6 />
     </Flex>
   );
 };
