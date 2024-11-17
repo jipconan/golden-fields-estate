@@ -34,3 +34,14 @@ export interface ContactInfo {
   email: string;
   phone: string;
 }
+
+// types/generalTypes.ts
+export interface AgentCardProps {
+  agent: {
+    name: string;
+    description: string;
+    availability: string;
+    image: string;
+  };
+  onContact: () => void;
+}

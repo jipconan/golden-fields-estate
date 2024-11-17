@@ -1,6 +1,10 @@
 import { ImageAsset } from "../types/generalTypes";
 
 // Images
+export const LOCATION_IMAGE: ImageAsset = {
+  image: "/images/singapore-map.png",
+  alt: "LOCATION_IMAGE",
+};
 // Landing Page - images
 export const LANDING_IMAGE: ImageAsset = {
   image: "/landing-pages/landingpage_image.jpg",
@@ -66,3 +70,9 @@ export const LANDING_ICONS: ImageAsset[] = [
     heading: "Buy back guarentee",
   },
 ];
+
+// ContactReview - images
+export const ContactReviewImage: ImageAsset = {
+  image: "https://fakeimg.pl/400x400",
+  alt: "Ava Mitchell",
+};

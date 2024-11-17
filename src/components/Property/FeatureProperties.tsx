@@ -55,7 +55,7 @@ const CustomImage: React.FC<ClickableIconProps> = ({
     objectFit="cover"
     w="100%"
     h="100%"
-    blockSize={["600px", "250px"]}
+    blockSize={["300px", "250px"]}
     transition="transform 0.3s ease-in-out"
     {...imageProps}
   />
@@ -91,9 +91,9 @@ const FeatureProperties: React.FC = () => {
       <Flex direction="column" align="center" w="100%" h="100%" gap={8}>
         {/* Gallery Images */}
         <Flex
-          direction="row"
+          direction={["column", "row"]}
           justify={["center", "space-between"]}
-          w={["80%", "80%"]}
+          w={["65%", "80%"]}
           h="100%"
           my={[48, 2]}
         >
