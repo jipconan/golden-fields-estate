@@ -7,7 +7,7 @@ const Section5: React.FC = () => (
     direction="column"
     align="center"
     justify="center"
-    w="100%"
+    w="80%"
     h={["100%", "100%"]}
     minH={[null, "1200px"]}
     py={["20%", 0]}

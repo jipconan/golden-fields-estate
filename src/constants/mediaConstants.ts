@@ -76,3 +76,9 @@ export const ContactReviewImage: ImageAsset = {
   image: "https://fakeimg.pl/400x400",
   alt: "Ava Mitchell",
 };
+
+// AboutPage - landing image
+export const AboutPageImage: ImageAsset = {
+  image: "/landing-pages/aboutpage_image.jpg",
+  alt: "about_page_image",
+};

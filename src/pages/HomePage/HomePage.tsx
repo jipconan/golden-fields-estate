@@ -13,7 +13,7 @@ const CustomFlex: React.FC<FlexProps> = (props) => (
     h="100%"
     minW={["850px", "20vw"]}
     minH={[null, "600px"]}
-    border="1px solid black"
+    // border="1px solid black"
     {...props}
   />
 );
@@ -22,7 +22,7 @@ const HomePage: React.FC = () => {
   const sections = Object.values(Section);
 
   return (
-    <Flex direction="column" w="auto" h="auto">
+    <Flex direction="column" w="auto" h="auto" mx="auto">
       {sections.map((SectionComponent, index) => (
         <CustomFlex key={index}>
           <SectionComponent />
