@@ -1,15 +1,9 @@
 // Section2.tsx
-import {
-  Flex,
-  Heading,
-  HeadingProps,
-  Text,
-  TextProps,
-  Button,
-} from "@chakra-ui/react";
+import { Flex, Heading, HeadingProps, Text, TextProps } from "@chakra-ui/react";
 import { Section4Data } from "../../../data/HomePageData";
 import AgentCard from "../../../components/Agent/AgentCard";
-import { agents } from "../../../data/AgentData"; // Adjust the path as necessary
+import { agents } from "../../../data/AgentData";
+import ViewMoreButton from "../../../components/Shared/ViewMore";
 
 // CustomHeading component for consistent heading styling
 const CustomHeader: React.FC<HeadingProps> = (props) => (
@@ -93,17 +87,7 @@ const Section4: React.FC = () => {
           />
         ))}
       </Flex>
-      <Button
-        bgColor="teal.500"
-        _hover={{ bg: "teal.700" }}
-        color="white"
-        minW="300px"
-        minH="50px"
-        fontSize="lg"
-        my={8}
-      >
-        View More
-      </Button>
+      <ViewMoreButton />
     </Flex>
   );
 };

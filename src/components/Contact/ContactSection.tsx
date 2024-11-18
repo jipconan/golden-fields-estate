@@ -13,9 +13,15 @@ import { ContactTextData } from "../../data/ContactSectionData";
 import { CONTACT_FORM } from "../../constants/contactConstants";
 import ContactReview from "./ContactReview";
 
-const ContactText: React.FC = () => {
+const ContactSection: React.FC = () => {
   return (
-    <Box p={8} w="80%" h="100%" alignContent="center" justifyContent="center">
+    <Box
+      w="100%"
+      h="100%"
+      alignContent="center"
+      justifyContent="center"
+      my={12}
+    >
       <Flex
         direction={{ base: "column", md: "row" }}
         align="center"
@@ -48,4 +54,4 @@ const ContactText: React.FC = () => {
   );
 };
 
-export default ContactText;
+export default ContactSection;

@@ -22,7 +22,7 @@ const CustomImage: React.FC<ClickableImageProps> = ({
       objectFit={["cover", "contain"]}
       align="start"
       justify="start"
-      w={["auto", "140px"]}
+      w={["auto", "180px"]}
       h={["60px", "auto"]}
       my={[8, 0]}
       {...imageProps}
@@ -67,6 +67,7 @@ const Header: React.FC<SectionData> = () => {
       h="auto"
       minH={[null, "10vh"]}
       p={[12, 8]}
+      boxShadow="lg"
     >
       {/* Header Logo */}
       <HeaderLogo />
