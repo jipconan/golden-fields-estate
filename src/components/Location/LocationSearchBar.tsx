@@ -4,7 +4,7 @@ import {
   LOCATIONS,
   HOUSING_TYPES,
   PRICING,
-} from "../../constants/locationConstants";
+} from "../../constants/menuBarConstants";
 import { formatNumberWithCommas } from "../../utilties/formatter";
 import { MenuBar } from "../Shared/MenuBar";
 

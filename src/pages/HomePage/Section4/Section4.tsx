@@ -79,7 +79,7 @@ const Section4: React.FC = () => {
         h="100%"
         gap={4}
       >
-        {agents.map((agent, index) => (
+        {agents.slice(0, 4).map((agent, index) => (
           <AgentCard
             key={index}
             agent={agent}
@@ -87,7 +87,9 @@ const Section4: React.FC = () => {
           />
         ))}
       </Flex>
-      <ViewMoreButton />
+
+      {/* View More Button */}
+      <ViewMoreButton onClick={() => (window.location.href = "/agents")} />
     </Flex>
   );
 };

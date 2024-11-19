@@ -3,6 +3,7 @@ import { ImageLink, TextLink } from "../types/generalTypes";
 // Header Links
 export const HEADER_LINKS: TextLink[] = [
   { name: "Properties", url: "/properties" },
+  { name: "Agents", url: "/agents" },
   { name: "About Us", url: "/about" },
   { name: "Contact", url: "/contact" },
 ];
