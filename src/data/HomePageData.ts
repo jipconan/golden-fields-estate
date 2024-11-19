@@ -1,4 +1,4 @@
-import { SectionData } from "../types/appStructureTypes";
+import { SectionData } from "../types/AppStructureTypes";
 import {
   LANDING_IMAGE,
   LANDING_ICONS,

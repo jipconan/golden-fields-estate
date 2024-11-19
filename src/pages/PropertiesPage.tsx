@@ -22,7 +22,8 @@ const PropertiesPage: React.FC = () => {
     <Flex direction="column" w="80%" h="100%" mx="auto" my={8}>
       <CustomFlex>
         <FeatureProperties />
-        <ViewMoreButton />
+        {/* View More Button */}
+        <ViewMoreButton onClick={() => {}} />
       </CustomFlex>
     </Flex>
   );

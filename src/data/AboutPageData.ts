@@ -1,4 +1,4 @@
-import { SectionData } from "../types/appStructureTypes";
+import { SectionData } from "../types/AppStructureTypes";
 
 export const AboutPageData: SectionData = {
   pageText: {

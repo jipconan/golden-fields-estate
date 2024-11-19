@@ -2,7 +2,7 @@ import { Flex, Link, LinkProps, Image, ImageProps } from "@chakra-ui/react";
 import React from "react";
 import { headerData } from "../../data/AppStructureData";
 import type { TextLink, ClickableImageProps } from "../../types/generalTypes";
-import type { SectionData } from "../../types/appStructureTypes";
+import type { SectionData } from "../../types/AppStructureTypes";
 
 // CustomImage component for the header logo
 const CustomImage: React.FC<ClickableImageProps> = ({

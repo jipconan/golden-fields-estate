@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { footerData } from "../../data/AppStructureData";
-import type { Section } from "../../types/appStructureTypes";
+import type { Section } from "../../types/AppStructureTypes";
 
 // CustomText component for consistent text styling across the footer
 const CustomHeading: React.FC<HeadingProps> = (props) => (

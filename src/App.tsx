@@ -29,6 +29,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Pages.HomePage />} />
               <Route path="/properties" element={<Pages.PropertiesPage />} />
+              <Route path="/agents" element={<Pages.AgentGalleryPage />} />
               <Route path="/about" element={<Pages.AboutPage />} />
               <Route path="/contact" element={<Pages.ContactPage />} />
             </Routes>

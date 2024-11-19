@@ -1,4 +1,4 @@
-import type { SectionData } from "../types/appStructureTypes";
+import type { SectionData } from "../types/AppStructureTypes";
 import {
   ETHAN_ADDRESS,
   ETHAN_CONTACT_INFO,
