@@ -5,47 +5,16 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-  Box,
-  Text,
-  Flex,
-  Heading,
 } from "@chakra-ui/react";
-
-interface FaqItem {
-  question: string;
-  answer: string;
-}
-
-const FaqSectionData: FaqItem[] = [
-  {
-    question: "How do I contact the property owner or agent?",
-    answer:
-      "Contact details are on each property page. You can message or call directly.",
-  },
-  {
-    question: "How do I search for properties?",
-    answer: "Use the search bar to filter by location, price, type, and more.",
-  },
-  {
-    question: "What types of properties are listed?",
-    answer:
-      "We offer apartments, houses, townhomes, and commercial properties for sale and rent.",
-  },
-];
+import { CustomFlex, CustomHeader, CustomBox, CustomText } from "../Shared";
+import { FaqSectionData } from "../../data/FaqData";
 
 const FaqSection: React.FC = () => {
   return (
-    <Flex
-      direction="column"
-      h="100%"
-      w="100%"
-      bgColor="teal.500"
-      color="white"
-      p={24}
-    >
-      <Heading fontSize="6xl" my={4}>
+    <CustomFlex direction="column" bgColor="teal.500" color="white" p={24}>
+      <CustomHeader fontSize={["8xl", "6xl"]} my={4} color="white">
         FAQ
-      </Heading>
+      </CustomHeader>
       <Accordion allowToggle w="100%">
         {FaqSectionData.map((faq, index) => (
           <AccordionItem
@@ -54,20 +23,22 @@ const FaqSection: React.FC = () => {
             borderBottom="1px solid white"
           >
             <h2>
-              <AccordionButton>
-                <Box flex="1" textAlign="left">
-                  <Text fontSize="2xl">{faq.question}</Text>
-                </Box>
+              <AccordionButton fontSize={["5xl", "xl"]}>
+                <CustomBox flex="1">
+                  <CustomText fontSize={["5xl", "2xl"]} color="white">
+                    {faq.question}
+                  </CustomText>
+                </CustomBox>
                 <AccordionIcon />
               </AccordionButton>
             </h2>
-            <AccordionPanel pb={4} fontSize="xl">
+            <AccordionPanel pb={4} fontSize={["5xl", "xl"]} textAlign="start">
               {faq.answer}
             </AccordionPanel>
           </AccordionItem>
         ))}
       </Accordion>
-    </Flex>
+    </CustomFlex>
   );
 };
 

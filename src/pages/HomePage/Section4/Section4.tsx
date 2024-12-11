@@ -1,84 +1,45 @@
 // Section2.tsx
-import { Flex, Heading, HeadingProps, Text, TextProps } from "@chakra-ui/react";
 import { Section4Data } from "../../../data/HomePageData";
 import AgentCard from "../../../components/Agent/AgentCard";
 import { agents } from "../../../data/AgentData";
-import ViewMoreButton from "../../../components/Shared/ViewMore";
-
-// CustomHeading component for consistent heading styling
-const CustomHeader: React.FC<HeadingProps> = (props) => (
-  <Heading textAlign="start" color="black" w="100%" {...props} />
-);
-
-// CustomText component for consistent text styling
-const CustomText: React.FC<TextProps> = (props) => (
-  <Text
-    textAlign="start"
-    fontWeight="100"
-    color="black"
-    lineHeight="1.2"
-    w="100%"
-    h="100%"
-    {...props}
-  />
-);
+import {
+  CustomButton,
+  CustomHeader,
+  CustomText,
+  CustomFlex,
+} from "../../../components/Shared";
 
 const Section4: React.FC = () => {
   return (
-    <Flex
-      direction="column"
-      align="center"
-      justify="center"
-      w="100%"
-      h={["100%", "100%"]}
-      minH={[null, "1200px"]}
-      py={["20%", 0]}
-    >
-      <Flex
-        direction="row"
-        align="center"
-        justify="center"
-        w="80%"
-        h="100%"
-        gap={4}
-      >
+    <CustomFlex direction="column" minH={[null, "1200px"]} py={["20%", 0]}>
+      <CustomFlex direction={["column", "row"]} w="80%" gap={4} my={[24, null]}>
         {/* Section 4 - Title Subsection */}
-        <Flex direction="column" w="100%" h="100%">
-          <CustomHeader fontSize={["lg", "7xl", "9xl"]} lineHeight={1}>
+        <CustomFlex direction="column">
+          <CustomHeader
+            fontSize={["8xl", "7xl", "9xl"]}
+            lineHeight={1}
+            textAlign="start"
+          >
             {Section4Data.pageTitle.heading}
           </CustomHeader>
-          <CustomHeader fontSize={["md", "5xl", "7xl"]}>
+          <CustomHeader fontSize={["8xl", "5xl", "7xl"]} textAlign="start">
             {Section4Data.pageText.text}
           </CustomHeader>
-        </Flex>
+        </CustomFlex>
 
         {/* Section 4 - Description Subsection */}
-        <Flex
-          direction="column"
-          align="center"
-          justify="center"
-          w="100%"
-          h="100%"
-          minH={[null, "400px"]}
-        >
-          <CustomHeader fontSize={["sm", "3xl", "5xl"]}>
+        <CustomFlex direction="column" minH={[null, "400px"]}>
+          <CustomHeader fontSize={["5xl", "3xl", "5xl"]}>
             {Section4Data.pageTitle2.heading}
           </CustomHeader>
-          <CustomText fontSize={["sm", "lg", "3xl"]}>
+          <CustomText fontSize={["5xl", "lg", "3xl"]}>
             {Section4Data.pageText2.text}
           </CustomText>
-        </Flex>
-      </Flex>
+        </CustomFlex>
+      </CustomFlex>
 
       {/* Section 4 - Agents Subsection */}
-      <Flex
-        direction="row"
-        align="center"
-        justify="center"
-        w="80%"
-        h="100%"
-        gap={4}
-      >
+      <CustomFlex direction={["column", "row"]} w="80%" gap={[24, 4]}>
         {agents.slice(0, 4).map((agent, index) => (
           <AgentCard
             key={index}
@@ -86,11 +47,17 @@ const Section4: React.FC = () => {
             onContact={() => alert(`Contacting ${agent.name}`)}
           />
         ))}
-      </Flex>
+      </CustomFlex>
 
       {/* View More Button */}
-      <ViewMoreButton onClick={() => (window.location.href = "/agents")} />
-    </Flex>
+      <CustomButton
+        onClick={() => (window.location.href = "/agents")}
+        buttonName="View More"
+        minW={["500px", "300px"]}
+        minH={["100px", "50px"]}
+        fontSize={["5xl", "lg"]}
+      />
+    </CustomFlex>
   );
 };
 

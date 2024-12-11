@@ -1,51 +1,42 @@
-import { Flex, Link, Image } from "@chakra-ui/react";
 import React from "react";
 import { fabData } from "../../data/AppStructureData";
-import type { ClickableImageProps, ImageLink } from "../../types/generalTypes";
+import type { ImageLink } from "../../types/generalTypes";
 import type { SectionData } from "../../types/AppStructureTypes";
-
-// CustomImage component for the header logo
-const CustomImage: React.FC<ClickableImageProps> = ({
-  href,
-  src,
-  ...imageProps
-}) => (
-  <Link href={href}>
-    <Image
-      src={src}
-      alt="Contact Logo"
-      boxSize={["50px", "80px"]}
-      objectFit="cover"
-      my={2}
-      p={[2, 6]}
-      borderRadius="50%"
-      bg="iconGreen"
-      {...imageProps}
-    />
-  </Link>
-);
+import { CustomImage, CustomFlex } from ".";
 
 // FAB component: Floating Contact Icons
 const ContactFABGroup: React.FC<SectionData> = () => {
   return (
-    <Flex
+    <CustomFlex
       direction="column"
-      p={2}
       justify="space-between"
+      textAlign="start"
       position="fixed"
       display={["none", "block"]}
       bottom="20px"
       right="20px"
       zIndex="1000"
+      w="auto"
+      h="auto"
     >
       {/* FAB Icons */}
       {fabData.contactIcons?.imageLinks &&
         fabData.contactIcons?.imageLinks.map(
           (link: ImageLink, index: number) => (
-            <CustomImage key={index} href={link.url} src={link.image} />
+            <CustomImage
+              key={index}
+              href={link.url}
+              src={link.image}
+              alt="Contact Logo"
+              boxSize={["50px", "80px"]}
+              my={2}
+              p={[2, 6]}
+              borderRadius="50%"
+              bg="iconGreen"
+            />
           )
         )}
-    </Flex>
+    </CustomFlex>
   );
 };
 

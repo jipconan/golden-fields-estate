@@ -1,10 +1,10 @@
-import { Flex, Heading } from "@chakra-ui/react";
 import { AgentSearchBar } from "../components/Agent/AgentSearchBar";
 import AgentCard from "../components/Agent/AgentCard";
 import { agents } from "../data/AgentData";
 import { useState } from "react";
-import ViewMoreButton from "../components/Shared/ViewMore";
+import { CustomButton, CustomFlex, CustomHeader } from "../components/Shared";
 
+// Agent Gallery Page component
 const AgentGalleryPage: React.FC = () => {
   const [visibleAgents, setVisibleAgents] = useState(4);
 
@@ -15,49 +15,47 @@ const AgentGalleryPage: React.FC = () => {
   const currentAgents = agents.slice(0, visibleAgents);
 
   return (
-    <Flex
-      direction="column"
-      align="center"
-      justify="center"
-      w="100%"
-      h="100%"
-      py={["20%", 0]}
-      mb={24}
-    >
+    <CustomFlex direction="column" py={["20%", 0]} my={8}>
+      {/* Agent Search Bar Component */}
       <AgentSearchBar />
-      <Flex w="80%" direction="column" align="center" justify="center" mt={8}>
-        <Heading textAlign="start" alignSelf="flex-start">
+
+      {/* Agent Gallery Page Content */}
+      <CustomFlex w="80%" direction="column">
+        {/* Our Agents Title */}
+        <CustomHeader
+          textAlign="start"
+          alignSelf="flex-start"
+          size={["4xl", "3xl"]}
+          my={8}
+        >
           Our Agents
-        </Heading>
+        </CustomHeader>
 
         {/* Agent Cards Container */}
-        <Flex
-          wrap="wrap" // Enables wrapping to create new rows
-          gap={4}
-          w="100%"
-          justify="center"
-          mt={8}
-        >
+        <CustomFlex wrap="wrap" gap={4} direction={["column", "row"]}>
           {currentAgents.map((agent, index) => (
-            <Flex
+            <CustomFlex
               key={index}
-              basis="calc(25% - 1rem)" // Ensure 4 cards per row (adjust based on spacing)
-              maxW="calc(25% - 1rem)"
+              basis={[null, "calc(25% - 1rem)"]} // Ensure 4 cards per row (adjust based on spacing)
+              maxW={[null, "calc(25% - 1rem)"]}
             >
+              {/* Agent Card Component */}
               <AgentCard
                 agent={agent}
                 onContact={() => alert(`Contacting ${agent.name}`)}
               />
-            </Flex>
+            </CustomFlex>
           ))}
-        </Flex>
+        </CustomFlex>
+
+        {/* View More button - Button disappear after all agents are listed */}
         {visibleAgents < agents.length && (
-          <Flex mt={4} gap={4}>
-            <ViewMoreButton onClick={handleViewMore} />
-          </Flex>
+          <CustomFlex minH={[null, "0"]}>
+            <CustomButton onClick={handleViewMore} buttonName="View More" />
+          </CustomFlex>
         )}
-      </Flex>
-    </Flex>
+      </CustomFlex>
+    </CustomFlex>
   );
 };
 

@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Flex } from "@chakra-ui/react";
 import {
   AGENTS_NAMES_SORT,
   AGENTS_EXPERIENCES,
   LANGUAGES,
 } from "../../constants/menuBarConstants";
-import { MenuBar } from "../Shared/MenuBar";
+import { MenuBar, CustomFlex } from "../Shared";
 
 const AgentSearchBar: React.FC = () => {
   const [selectedName, setSelectedName] = useState("Name");
@@ -23,20 +22,13 @@ const AgentSearchBar: React.FC = () => {
   };
 
   return (
-    <Flex
-      direction="row"
-      align="center"
-      justify="center"
-      w="100%"
-      h="100%"
-      minH="200px"
-    >
+    <CustomFlex direction="row" minH="200px">
       <MenuBar
         categories={[AGENTS_NAMES_SORT, AGENTS_EXPERIENCES, LANGUAGES]}
         selections={[selectedName, selectedExperience, selectedLanguages]}
         onSelect={handleSelect}
       />
-    </Flex>
+    </CustomFlex>
   );
 };
 

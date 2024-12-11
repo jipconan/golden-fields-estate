@@ -1,19 +1,15 @@
-// Section3.tsx
-import { Flex } from "@chakra-ui/react";
 import LocationSection from "../../../components/Location/LocationSection";
+import { CustomFlex } from "../../../components/Shared";
 
 const Section3: React.FC = () => (
-  <Flex
+  <CustomFlex
     direction="column"
-    align="center"
-    justify="center"
-    w="100%"
     h={["100%", "100vh"]}
-    minH={[null, "1200px"]}
+    minH={["2240px", "1000px"]}
     py={["20%", 0]}
   >
     <LocationSection />
-  </Flex>
+  </CustomFlex>
 );
 
 export default Section3;
