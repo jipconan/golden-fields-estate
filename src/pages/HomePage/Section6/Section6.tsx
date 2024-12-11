@@ -1,11 +1,11 @@
 // Section6.tsx
-import { Flex } from "@chakra-ui/react";
 import FaqSection from "../../../components/Faq/FaqSection";
+import { CustomFlex } from "../../../components/Shared";
 
 const Section6: React.FC = () => (
-  <Flex direction="column" align="center" justify="center" w="100%" h="100%">
+  <CustomFlex direction="column">
     <FaqSection />
-  </Flex>
+  </CustomFlex>
 );
 
 export default Section6;

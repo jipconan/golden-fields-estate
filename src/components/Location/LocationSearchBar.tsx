@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { Flex } from "@chakra-ui/react";
 import {
   LOCATIONS,
   HOUSING_TYPES,
   PRICING,
 } from "../../constants/menuBarConstants";
 import { formatNumberWithCommas } from "../../utilties/formatter";
-import { MenuBar } from "../Shared/MenuBar";
+import { MenuBar, CustomFlex } from "../Shared";
 
 const LocationSearchBar: React.FC = () => {
   const [selectedLocation, setSelectedLocation] = useState("Location");
@@ -25,20 +24,13 @@ const LocationSearchBar: React.FC = () => {
   };
 
   return (
-    <Flex
-      direction="row"
-      align="center"
-      justify="center"
-      w="100%"
-      h="100%"
-      minH="200px"
-    >
+    <CustomFlex direction="row" minH="200px">
       <MenuBar
         categories={[LOCATIONS, HOUSING_TYPES, PRICING]}
         selections={[selectedLocation, selectedHousingType, selectedPricing]}
         onSelect={handleSelect}
       />
-    </Flex>
+    </CustomFlex>
   );
 };
 

@@ -1,19 +1,16 @@
 // Section3.tsx
-import { Flex } from "@chakra-ui/react";
 import ContactSection from "../../../components/Contact/ContactSection";
+import { CustomFlex } from "../../../components/Shared";
 
 const Section5: React.FC = () => (
-  <Flex
+  <CustomFlex
     direction="column"
-    align="center"
-    justify="center"
     w="80%"
-    h={["100%", "100%"]}
-    minH={[null, "1200px"]}
+    minH={[null, "1000px"]}
     py={["20%", 0]}
   >
     <ContactSection />
-  </Flex>
+  </CustomFlex>
 );
 
 export default Section5;

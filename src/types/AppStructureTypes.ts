@@ -15,3 +15,7 @@ export interface Section {
 export interface SectionData {
   [key: string]: Section;
 }
+export interface FaqData {
+  question: string;
+  answer: string;
+}

@@ -1,4 +1,4 @@
-import { ImageProps, LinkProps } from "@chakra-ui/react";
+import { HeadingProps, ImageProps, LinkProps } from "@chakra-ui/react";
 
 export type TextLink = {
   name: string;
@@ -27,6 +27,8 @@ export interface ClickableIconProps extends ImageProps {
   src?: string;
   alt?: string;
   heading?: string;
+  imageProps?: ImageProps;
+  headingProps?: HeadingProps;
   linkProps?: LinkProps;
 }
 

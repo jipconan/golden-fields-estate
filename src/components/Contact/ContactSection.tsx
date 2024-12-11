@@ -1,56 +1,56 @@
 import React from "react";
-import {
-  Box,
-  Flex,
-  Heading,
-  Text,
-  FormControl,
-  FormLabel,
-  Input,
-  Button,
-} from "@chakra-ui/react";
+import { FormControl, FormLabel, Input } from "@chakra-ui/react";
 import { ContactTextData } from "../../data/ContactSectionData";
-import { CONTACT_FORM } from "../../constants/contactConstants";
+import { CONTACT_FORM } from "../../constants/generalConstants";
 import ContactReview from "./ContactReview";
+import {
+  CustomFlex,
+  CustomButton,
+  CustomHeader,
+  CustomText,
+  CustomBox,
+} from "../Shared";
 
 const ContactSection: React.FC = () => {
   return (
-    <Box
-      w="100%"
-      h="100%"
-      alignContent="center"
-      justifyContent="center"
-      my={12}
-    >
-      <Flex
+    <CustomBox my={12}>
+      <CustomFlex
         direction={{ base: "column", md: "row" }}
         align="center"
         justify="center"
       >
-        <Box flex="1" p={4}>
-          <Heading as="h2" fontSize="9xl" mb={4}>
+        <CustomBox flex="1" p={4}>
+          <CustomHeader as="h2" fontSize="9xl" mb={4}>
             {ContactTextData.pageTitle.heading}
-          </Heading>
-          <Text fontSize="xl" mb={4}>
+          </CustomHeader>
+          <CustomText fontSize={["5xl", "xl"]} mb={4}>
             {ContactTextData.pageText.text}
-          </Text>
+          </CustomText>
           <ContactReview />
-        </Box>
-        <Box flex="1" p={4} w="100%" h="100%">
+        </CustomBox>
+        <CustomBox flex="1" p={4} w="100%" h="100%">
           <form>
             {CONTACT_FORM.map((field: string) => (
-              <FormControl id={field} mb={4} key={field} height="100px">
-                <FormLabel fontSize="3xl">{field}</FormLabel>
-                <Input type="text" h="50px" />
+              <FormControl id={field} mb={4} key={field} h={["200px", "100px"]}>
+                <FormLabel fontSize={["5xl", "3xl"]}>{field}</FormLabel>
+                <Input
+                  type="text"
+                  h={["100px", "50px"]}
+                  fontSize={["5xl", "3xl"]}
+                  fontWeight="100"
+                />
               </FormControl>
             ))}
-            <Button colorScheme="teal" size="lg" type="submit">
-              Submit
-            </Button>
+            <CustomButton
+              onClick={() => alert("Form submitted!")}
+              type="submit"
+              buttonName="Submit"
+              w={["100%", null]}
+            />
           </form>
-        </Box>
-      </Flex>
-    </Box>
+        </CustomBox>
+      </CustomFlex>
+    </CustomBox>
   );
 };
 

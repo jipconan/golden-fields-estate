@@ -1,40 +1,43 @@
 import React from "react";
-import { Box, Image, Heading, Text, Button } from "@chakra-ui/react";
 import { AgentCardProps } from "../../types/generalTypes";
+import {
+  CustomBox,
+  CustomImage,
+  CustomHeader,
+  CustomButton,
+  CustomText,
+} from "../Shared";
 
 const AgentCard: React.FC<AgentCardProps> = ({ agent, onContact }) => {
   return (
-    <Box
-      borderWidth="1px"
-      borderRadius="lg"
-      overflow="hidden"
-      w="100%"
-      h="100%"
-    >
-      <Image src={agent.image} alt={agent.name} width="100%" />
-      <Box p="6" minH={[null, "250px"]} minW={[null, "350px"]}>
-        <Heading as="h3" size="lg" mb="2">
+    <CustomBox borderWidth="1px" borderRadius="lg" overflow="hidden">
+      <CustomImage src={agent.image} alt={agent.name} />
+      <CustomBox p="6" minH={[null, "250px"]} minW={[null, "350px"]}>
+        <CustomHeader as="h3" size={["4xl", "lg"]} mb="2">
           {agent.name}
-        </Heading>
-        <Text fontSize="lg" color="gray.500" mb="4">
+        </CustomHeader>
+        <CustomText fontSize={["4xl", "2xl"]} color="gray.500" mb="4">
           {agent.availability}
-        </Text>
-        <Text fontSize="xl" mb="4">
+        </CustomText>
+        <CustomText fontSize={["4xl", "2xl"]} fontWeight="300" mb="4">
           {agent.description}
-        </Text>
-      </Box>
-      <Button
+        </CustomText>
+      </CustomBox>
+      <CustomButton
         bgColor="lightgrey"
         _hover={{ bg: "grey" }}
         onClick={onContact}
-        width="100%"
-        minH="75px"
-        fontSize="2xl"
+        minH={["125px", "75px"]}
+        fontSize={["5xl", "2xl"]}
+        fontWeight={300}
         borderRadius={0}
-      >
-        Contact
-      </Button>
-    </Box>
+        buttonName="Contact"
+        color="black"
+        w="100%"
+        h="100%"
+        my={0}
+      />
+    </CustomBox>
   );
 };
 

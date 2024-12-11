@@ -1,61 +1,27 @@
 // Section1.tsx
-import { Flex, Heading, Image, HeadingProps, Box } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { landingPageData } from "../../../data/HomePageData";
-import { ClickableIconProps, ImageAsset } from "../../../types/generalTypes";
-
-// CustomHeading component for consistent heading styling
-const CustomHeader: React.FC<HeadingProps> = (props) => (
-  <Heading textAlign="center" color="white" w="100%" {...props} />
-);
-
-// CustomIcon component for consistent icon styling
-const CustomIcon: React.FC<ClickableIconProps> = ({
-  src,
-  alt,
-  heading,
-  ...imageProps
-}) => (
-  <Flex direction="column" align="center" justify="center" h="auto" w="auto">
-    <Image
-      src={src}
-      alt={alt}
-      objectFit="cover"
-      p={[4, 2, 2]}
-      bg="iconGreen"
-      h="auto"
-      w="auto"
-      blockSize={["150px", "100px"]}
-      {...imageProps}
-    />
-    <CustomHeader
-      size={["2xl", "lg"]}
-      h="auto"
-      w={["200px", "140px"]}
-      fontWeight="300"
-      mt={8}
-    >
-      {heading}
-    </CustomHeader>
-  </Flex>
-);
+import { ImageAsset } from "../../../types/generalTypes";
+import {
+  CustomIcon,
+  CustomHeader,
+  CustomBox,
+  CustomFlex,
+} from "../../../components/Shared";
 
 const Section1: React.FC = () => (
-  <Box
+  <CustomBox
     backgroundImage={landingPageData.pageImage.imageAsset?.image}
     backgroundSize="cover"
     backgroundPosition="center"
     backgroundRepeat="no-repeat"
-    w="100%"
-    h={["100%", "100vh"]}
+    h={["1600px", "100vh"]}
     minH={[null, "600px"]}
   >
-    <Flex
+    <CustomFlex
       direction="column"
-      align="center"
-      justify="space-between"
-      py={["50%", "2%"]}
-      w="auto"
-      h="100%"
+      justify={["center", "space-between"]}
+      py={["30%", "4%"]}
     >
       {/* Landing Page - Title */}
       <CustomHeader
@@ -67,18 +33,14 @@ const Section1: React.FC = () => (
           "4px 4px 5px rgba(0, 0, 0, 0.5)",
         ]}
         textAlign="center"
+        color="white"
+        w="100%"
       >
         {landingPageData.pageTitle?.heading}
       </CustomHeader>
 
       {/* Icon Section */}
-      <Flex
-        align="center"
-        justify="center"
-        position="relative"
-        h="auto"
-        w={["90%", "70%"]}
-      >
+      <CustomFlex position="relative" h="auto" w={["90%", "70%"]}>
         {/* Icon Section - white line */}
         <Box
           position="absolute"
@@ -90,8 +52,7 @@ const Section1: React.FC = () => (
         />
 
         {/* Icon Section - row of icons */}
-        <Flex
-          align="center"
+        <CustomFlex
           position="relative"
           justify="space-between"
           h="auto"
@@ -105,13 +66,23 @@ const Section1: React.FC = () => (
                 src={icon.image}
                 alt={icon.alt}
                 heading={icon.heading}
+                imageProps={{
+                  p: [4, 2, 2],
+                  bg: "iconGreen",
+                  blockSize: ["150px", "100px"],
+                }}
+                headingProps={{
+                  size: ["2xl", "lg"],
+                  w: ["180px", "140px"],
+                  color: "white",
+                }}
               />
             )
           )}
-        </Flex>
-      </Flex>
-    </Flex>
-  </Box>
+        </CustomFlex>
+      </CustomFlex>
+    </CustomFlex>
+  </CustomBox>
 );
 
 export default Section1;

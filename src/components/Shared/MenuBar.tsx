@@ -20,9 +20,9 @@ interface MenuBarProps {
 const CustomMenuButton: React.FC<MenuButtonProps> = (props) => (
   <MenuButton
     as={Button}
-    w="200px"
-    h="150px"
-    fontSize={["md", "2xl"]}
+    w={["100%", "200px"]}
+    h={["150px", "150px"]}
+    fontSize={["4xl", "2xl"]}
     borderRadius="0"
     border="1px solid gray"
     whiteSpace="normal"
@@ -54,6 +54,7 @@ const MenuBar: React.FC<MenuBarProps> = ({
               <MenuItem
                 key={idx}
                 onClick={() => onSelect(index, item.toString())}
+                fontSize={["4xl", "initial"]}
               >
                 {item}
               </MenuItem>
@@ -74,4 +75,4 @@ const MenuBar: React.FC<MenuBarProps> = ({
   );
 };
 
-export { MenuBar };
+export default MenuBar;

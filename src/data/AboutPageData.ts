@@ -5,7 +5,7 @@ export const AboutPageData: SectionData = {
     text: "Golden Fields Realty is a real estate firm offering expert guidance in buying, selling, and renting properties, with a focus on personalized service.",
   },
   pageTitle: {
-    heading: "About Us",
+    heading: "About\nUs",
   },
   pageTitle2: {
     heading: "At Golden Fields Realty,",
