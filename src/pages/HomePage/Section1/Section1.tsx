@@ -75,6 +75,7 @@ const Section1: React.FC = () => (
                   size: ["2xl", "lg"],
                   w: ["180px", "140px"],
                   color: "white",
+                  bgColor: "rgba(0, 0, 0, 0.5)",
                 }}
               />
             )

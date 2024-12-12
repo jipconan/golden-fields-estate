@@ -9,14 +9,14 @@ const FooterSection: React.FC<{ section: Section }> = ({ section }) => (
     direction="column"
     align="flex-start"
     justify="flex-start"
-    m={[12, 0]}
-    px={[12, 0]}
+    m={[4, 0]}
+    px={[4, 0]}
     w={["auto", "40vw"]}
   >
     {section.heading ? (
       // Render the heading if it exists
       <CustomHeader
-        size={["4xl", "2xl"]}
+        size={["3xl", "2xl"]}
         mb={8}
         textAlign="start"
         color="white"
@@ -26,7 +26,7 @@ const FooterSection: React.FC<{ section: Section }> = ({ section }) => (
     ) : (
       // If heading is empty, render a hidden placeholder
       <CustomHeader
-        size={["4xl", "2xl"]}
+        size={["3xl", "2xl"]}
         mb={8}
         textAlign="start"
         visibility="hidden"
@@ -41,7 +41,7 @@ const FooterSection: React.FC<{ section: Section }> = ({ section }) => (
         direction="column"
         align="flex-start"
         justify="flex-start"
-        gap={[12, 2]}
+        gap={[8, 2]}
         my={0}
       >
         {section.textLinks.map((link, index) => (
@@ -49,7 +49,7 @@ const FooterSection: React.FC<{ section: Section }> = ({ section }) => (
             key={index}
             href={link.url}
             aria-label={link.name}
-            fontSize={["5xl", "2xl"]}
+            fontSize={["4xl", "2xl"]}
             fontWeight="300"
             textAlign="start"
             color="white"
@@ -67,7 +67,7 @@ const FooterSection: React.FC<{ section: Section }> = ({ section }) => (
     {/* Render text if the section contains any */}
     {section.texts && (
       <CustomText
-        fontSize={["5xl", "2xl"]}
+        fontSize={["4xl", "2xl"]}
         fontWeight="300"
         textAlign="start"
         color="white"
@@ -95,7 +95,7 @@ const Footer: React.FC = () => {
       align="flex-start"
       justify="space-between"
       bg="customGray"
-      gap={[24, 4]}
+      gap={[12, 4]}
     >
       {/* Dynamically render each section in the footer by mapping through the footerData */}
       {Object.values(footerData).map((section, index) => (

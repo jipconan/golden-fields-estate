@@ -9,13 +9,7 @@ const HomePage: React.FC = () => {
   return (
     <CustomFlex direction="column">
       {sections.map((SectionComponent, index) => (
-        <CustomFlex
-          key={index}
-          direction="column"
-          minW={["850px", "20vw"]}
-          minH={[null, "600px"]}
-          // border="1px solid black"
-        >
+        <CustomFlex key={index} direction="column">
           <SectionComponent />
         </CustomFlex>
       ))}

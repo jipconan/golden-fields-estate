@@ -15,12 +15,12 @@ const AgentGalleryPage: React.FC = () => {
   const currentAgents = agents.slice(0, visibleAgents);
 
   return (
-    <CustomFlex direction="column" py={["20%", 0]} my={8}>
+    <CustomFlex direction="column" my={8} w="80%" mx="auto">
       {/* Agent Search Bar Component */}
       <AgentSearchBar />
 
       {/* Agent Gallery Page Content */}
-      <CustomFlex w="80%" direction="column">
+      <CustomFlex direction="column">
         {/* Our Agents Title */}
         <CustomHeader
           textAlign="start"
@@ -32,7 +32,7 @@ const AgentGalleryPage: React.FC = () => {
         </CustomHeader>
 
         {/* Agent Cards Container */}
-        <CustomFlex wrap="wrap" gap={4} direction={["column", "row"]}>
+        <CustomFlex wrap="wrap" gap={[24, 4]} direction={["column", "row"]}>
           {currentAgents.map((agent, index) => (
             <CustomFlex
               key={index}
