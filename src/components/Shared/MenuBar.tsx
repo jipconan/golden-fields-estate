@@ -22,7 +22,7 @@ const CustomMenuButton: React.FC<MenuButtonProps> = (props) => (
     as={Button}
     w={["100%", "200px"]}
     h={["150px", "150px"]}
-    fontSize={["4xl", "2xl"]}
+    fontSize={["1.5em", "2xl"]}
     borderRadius="0"
     border="1px solid gray"
     whiteSpace="normal"
@@ -54,7 +54,7 @@ const MenuBar: React.FC<MenuBarProps> = ({
               <MenuItem
                 key={idx}
                 onClick={() => onSelect(index, item.toString())}
-                fontSize={["4xl", "initial"]}
+                fontSize={["30px", "initial"]}
               >
                 {item}
               </MenuItem>
@@ -68,7 +68,7 @@ const MenuBar: React.FC<MenuBarProps> = ({
           _active={{ bgColor: "teal.500" }}
           _hover={{ bgColor: "teal.400" }}
         >
-          <IoSearch size="1.5em" style={{ margin: "auto" }} />
+          <IoSearch size="30px" style={{ margin: "auto" }} />
         </CustomMenuButton>
       </Menu>
     </>

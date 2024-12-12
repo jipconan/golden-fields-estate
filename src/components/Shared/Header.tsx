@@ -32,6 +32,7 @@ const Header: React.FC<SectionData> = () => {
       minH={[null, "10vh"]}
       p={[12, 8]}
       boxShadow="lg"
+      minW={["850px", "20vw"]}
     >
       {/* Header Logo */}
       <HeaderLogo />
