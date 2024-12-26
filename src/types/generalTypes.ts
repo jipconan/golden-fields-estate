@@ -37,13 +37,42 @@ export interface ContactInfo {
   phone: string;
 }
 
-// types/generalTypes.ts
+export interface AgentProps {
+  name: string;
+  experience: number;
+  languages: string[];
+  description: string;
+  about: string;
+  imageUrl: string[];
+  seniority: string;
+  specialties: string[];
+  email: string;
+  phone: string;
+  properties: string[];
+  availability: string;
+}
+
 export interface AgentCardProps {
-  agent: {
-    name: string;
-    description: string;
-    availability: string;
-    image: string;
-  };
+  data: AgentProps;
+  onContact: () => void;
+}
+
+export interface PropertyProps {
+  name: string;
+  location: string;
+  propertyType: string;
+  price: number;
+  description: string;
+  imageUrl: string[];
+  floorPlanUrl: string;
+  address: string;
+  bedrooms: number;
+  bathrooms: number;
+  status: string;
+  agents: string[];
+}
+
+export interface PropertyCardProps {
+  data: PropertyProps;
   onContact: () => void;
 }

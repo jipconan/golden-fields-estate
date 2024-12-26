@@ -8,19 +8,19 @@ import {
   CustomText,
 } from "../Shared";
 
-const AgentCard: React.FC<AgentCardProps> = ({ agent, onContact }) => {
+const AgentCard: React.FC<AgentCardProps> = ({ data, onContact }) => {
   return (
     <CustomBox borderWidth="1px" borderRadius="lg" overflow="hidden">
-      <CustomImage src={agent.image} alt={agent.name} />
+      <CustomImage src={data.imageUrl[0]} alt={data.name} />
       <CustomBox p="6" minH={[null, "250px"]} minW={[null, "350px"]}>
         <CustomHeader as="h3" size={["4xl", "lg"]} mb="2">
-          {agent.name}
+          {data.name}
         </CustomHeader>
         <CustomText fontSize={["4xl", "2xl"]} color="gray.500" mb="4">
-          {agent.availability}
+          {data.availability}
         </CustomText>
         <CustomText fontSize={["4xl", "2xl"]} fontWeight="300" mb="4">
-          {agent.description}
+          {data.description}
         </CustomText>
       </CustomBox>
       <CustomButton

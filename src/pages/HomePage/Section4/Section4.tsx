@@ -1,15 +1,22 @@
 // Section2.tsx
 import { Section4Data } from "../../../data/HomePageData";
 import AgentCard from "../../../components/Agent/AgentCard";
-import { agents } from "../../../data/AgentData";
+import { AgentProps } from "../../../types/generalTypes";
 import {
   CustomButton,
   CustomHeader,
   CustomText,
   CustomFlex,
 } from "../../../components/Shared";
+import { useGallery } from "../../../components/Hooks/useGallery";
 
 const Section4: React.FC = () => {
+  const { datas, loading, LoadingComponent } = useGallery("agents");
+
+  if (loading) {
+    return <LoadingComponent />;
+  }
+
   return (
     <CustomFlex direction="column" minH={[null, "1200px"]} py={["20%", 0]}>
       <CustomFlex direction={["column", "row"]} w="80%" gap={4} my={[24, null]}>
@@ -40,13 +47,19 @@ const Section4: React.FC = () => {
 
       {/* Section 4 - Agents Subsection */}
       <CustomFlex direction={["column", "row"]} w="80%" gap={[24, 4]}>
-        {agents.slice(0, 4).map((agent, index) => (
-          <AgentCard
-            key={index}
-            agent={agent}
-            onContact={() => alert(`Contacting ${agent.name}`)}
-          />
-        ))}
+        {datas
+          .filter(
+            (data): data is AgentProps =>
+              (data as AgentProps).experience !== undefined
+          )
+          .slice(0, 4)
+          .map((data, index) => (
+            <AgentCard
+              key={index}
+              data={data}
+              onContact={() => alert(`Contacting ${data.name}`)}
+            />
+          ))}
       </CustomFlex>
 
       {/* View More Button */}

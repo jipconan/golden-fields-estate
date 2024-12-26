@@ -1,10 +1,10 @@
-import { AgentSearchBar } from "../components/Agent/AgentSearchBar";
-import AgentCard from "../components/Agent/AgentCard";
+// import { PropertySearchBar } from "../components/Property/PropertySearchBar";
+import PropertyCard from "../components/Property/PropertyCard";
 import { CustomButton, CustomFlex, CustomHeader } from "../components/Shared";
 import { useGallery } from "../components/Hooks/useGallery";
-import { AgentProps } from "../types/generalTypes";
+import { PropertyProps } from "../types/generalTypes";
 
-const AgentGalleryPage: React.FC = () => {
+const PropertiesGalleryPage: React.FC = () => {
   const {
     datas,
     currentDatas,
@@ -12,45 +12,37 @@ const AgentGalleryPage: React.FC = () => {
     handleViewMore,
     loading,
     LoadingComponent,
-  } = useGallery("agents");
+  } = useGallery("properties");
 
   if (loading) {
     return <LoadingComponent />;
   }
 
   return (
-    <CustomFlex
-      direction="column"
-      w="80%"
-      minH={[null, "800px"]}
-      mx="auto"
-      my={8}
-    >
+    <CustomFlex direction="column" my={8} w="80%" mx="auto">
+      {/* <PropertySearchBar /> */}
       <CustomFlex direction="column">
-        <AgentSearchBar />
-
         <CustomHeader
           textAlign="start"
           alignSelf="flex-start"
           size={["4xl", "3xl"]}
           my={8}
         >
-          Our Agents
+          Our Properties
         </CustomHeader>
-
         <CustomFlex wrap="wrap" gap={[24, 4]} direction={["column", "row"]}>
           {currentDatas
             .filter(
-              (data): data is AgentProps =>
-                (data as AgentProps).experience !== undefined
+              (data): data is PropertyProps =>
+                (data as PropertyProps).address !== undefined
             )
-            .map((data: AgentProps, index: number) => (
+            .map((data: PropertyProps, index: number) => (
               <CustomFlex
                 key={index}
                 basis={[null, "calc(25% - 1rem)"]}
                 maxW={[null, "calc(25% - 1rem)"]}
               >
-                <AgentCard
+                <PropertyCard
                   data={data}
                   onContact={() => alert(`Contacting ${data.name}`)}
                 />
@@ -67,4 +59,4 @@ const AgentGalleryPage: React.FC = () => {
   );
 };
 
-export default AgentGalleryPage;
+export default PropertiesGalleryPage;
