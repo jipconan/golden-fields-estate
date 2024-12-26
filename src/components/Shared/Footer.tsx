@@ -9,9 +9,8 @@ const FooterSection: React.FC<{ section: Section }> = ({ section }) => (
     direction="column"
     align="flex-start"
     justify="flex-start"
-    m={[4, 0]}
-    px={[4, 0]}
-    w={["auto", "40vw"]}
+    m={[4, null]}
+    px={[4, null]}
   >
     {section.heading ? (
       // Render the heading if it exists
@@ -95,7 +94,7 @@ const Footer: React.FC = () => {
       align="flex-start"
       justify="space-between"
       bg="customGray"
-      gap={[12, 4]}
+      gap={[12, null]}
     >
       {/* Dynamically render each section in the footer by mapping through the footerData */}
       {Object.values(footerData).map((section, index) => (
