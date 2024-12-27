@@ -32,7 +32,7 @@ const Header: React.FC<SectionData> = () => {
       minH={[null, "10vh"]}
       p={[12, 8]}
       boxShadow="lg"
-      minW={["850px", "20vw"]}
+      minW={["850px", "100%"]}
     >
       {/* Header Logo */}
       <HeaderLogo />
@@ -41,12 +41,12 @@ const Header: React.FC<SectionData> = () => {
       {headerData.headerLinks && (
         <CustomFlex
           direction={["column", "row"]}
-          justify="space-between"
-          align={["start", "center"]}
+          justify={["start", "space-between"]}
+          align="start"
           bg="white"
-          w={["auto", "40vw"]}
-          minW={[null, "400px"]}
+          w={["100%", "50%"]}
           gap={[8, 0]}
+          my={[8, 0]}
         >
           {/* Map through the links in headerData.headerLinks and render them */}
           {headerData.headerLinks?.textLinks &&
