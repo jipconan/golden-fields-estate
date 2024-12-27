@@ -10,7 +10,10 @@ const CustomFlex: React.FC<FlexProps> = ({ children, ...props }) => (
     color="black"
     w="100%"
     h="100%"
-    py={0}
+    mx="auto"
+    fontWeight="100"
+    lineHeight="1.2"
+    whiteSpace="pre-wrap"
     {...props}
   >
     {children}

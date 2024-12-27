@@ -1,10 +1,12 @@
-// import { PropertySearchBar } from "../components/Property/PropertySearchBar";
+import { LocationSearchBar } from "../components/Location/LocationSearchBar";
 import PropertyCard from "../components/Property/PropertyCard";
 import { CustomButton, CustomFlex, CustomHeader } from "../components/Shared";
 import { useGallery } from "../components/Hooks/useGallery";
 import { PropertyProps } from "../types/generalTypes";
+import useScrollbarWidth from "../utilties/scrollbarWidth";
 
-const PropertiesGalleryPage: React.FC = () => {
+const PropertyGalleryPage: React.FC = () => {
+  const scrollbarWidth = useScrollbarWidth();
   const {
     datas,
     currentDatas,
@@ -19,9 +21,15 @@ const PropertiesGalleryPage: React.FC = () => {
   }
 
   return (
-    <CustomFlex direction="column" my={8} w="80%" mx="auto">
-      {/* <PropertySearchBar /> */}
-      <CustomFlex direction="column">
+    <CustomFlex
+      direction="column"
+      w={["100%", `calc(100vw - ${scrollbarWidth}px)`]}
+      minH={[null, "800px"]}
+      my={8}
+    >
+      <CustomFlex direction="column" w="80%">
+        <LocationSearchBar />
+
         <CustomHeader
           textAlign="start"
           alignSelf="flex-start"
@@ -30,6 +38,7 @@ const PropertiesGalleryPage: React.FC = () => {
         >
           Our Properties
         </CustomHeader>
+
         <CustomFlex wrap="wrap" gap={[24, 4]} direction={["column", "row"]}>
           {currentDatas
             .filter(
@@ -59,4 +68,4 @@ const PropertiesGalleryPage: React.FC = () => {
   );
 };
 
-export default PropertiesGalleryPage;
+export default PropertyGalleryPage;
