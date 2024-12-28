@@ -16,12 +16,11 @@ const AboutPage: React.FC = () => {
       w="80%"
       minH={[null, "1200px"]}
       py={["20%", 0]}
-      mx="auto"
     >
       {/* Landing Image */}
       <CustomFlex direction="column" gap={4}>
         <CustomImage src={AboutPageImage.image} alt={AboutPageImage.alt} />
-        <CustomText fontSize={["4xl", "2xl", "3xl"]}>
+        <CustomText fontSize={["20px", "2xl", "3xl"]}>
           {AboutPageData.pageText.text}
         </CustomText>
       </CustomFlex>
@@ -30,7 +29,7 @@ const AboutPage: React.FC = () => {
       <CustomFlex gap={[12, 4]} direction={["column", "row"]} my={[12, null]}>
         {/* About Us Title */}
         <CustomFlex direction="column" textAlign={"start"}>
-          <CustomHeader fontSize={["9xl", "7xl", "9xl"]} lineHeight={1}>
+          <CustomHeader fontSize={["70px", "7xl", "9xl"]} lineHeight={1}>
             {AboutPageData.pageTitle.heading}
           </CustomHeader>
         </CustomFlex>
@@ -38,11 +37,11 @@ const AboutPage: React.FC = () => {
         {/* At Golden Fields Realty Section */}
         <CustomFlex direction="column">
           {/* At Golden Fields Realty title */}
-          <CustomHeader fontSize={["6xl", "3xl", "5xl"]}>
+          <CustomHeader fontSize={["40px", "3xl", "5xl"]}>
             {AboutPageData.pageTitle2.heading}
           </CustomHeader>
           {/* At Golden Fields Realty description */}
-          <CustomText fontSize={["5xl", "lg", "3xl"]}>
+          <CustomText fontSize={["20px", "lg", "3xl"]}>
             {AboutPageData.pageText2.text}
           </CustomText>
         </CustomFlex>

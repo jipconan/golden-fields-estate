@@ -15,8 +15,8 @@ const Section1: React.FC = () => (
     backgroundSize="cover"
     backgroundPosition="center"
     backgroundRepeat="no-repeat"
-    h={["1600px", "100vh"]}
-    minH={[null, "600px"]}
+    h={["100%", "100vh"]}
+    minH={["100%", "600px"]}
   >
     <CustomFlex
       direction="column"
@@ -25,7 +25,7 @@ const Section1: React.FC = () => (
     >
       {/* Landing Page - Title */}
       <CustomHeader
-        fontSize={["150px", "8xl"]}
+        fontSize={["50px", "8xl"]}
         fontWeight="700"
         fontFamily="cormorantSc"
         textShadow={[
@@ -45,9 +45,9 @@ const Section1: React.FC = () => (
         <Box
           position="absolute"
           h={["1px", "2px"]}
-          w="90%"
+          w={["85%", "90%"]}
           bg="white"
-          top="25%"
+          top={["20%", "30%"]}
           zIndex="0"
         />
 
@@ -67,13 +67,13 @@ const Section1: React.FC = () => (
                 alt={icon.alt}
                 heading={icon.heading}
                 imageProps={{
-                  p: [4, 2, 2],
+                  p: 2,
                   bg: "iconGreen",
-                  blockSize: ["150px", "100px"],
+                  blockSize: ["50px", "7em"],
                 }}
                 headingProps={{
-                  size: ["2xl", "lg"],
-                  w: ["180px", "140px"],
+                  fontSize: ["15px", "2xl"],
+                  w: "80%",
                   color: "white",
                   bgColor: "rgba(0, 0, 0, 0.5)",
                 }}

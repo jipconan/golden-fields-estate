@@ -5,12 +5,7 @@ import FeatureProperties from "../../../components/Property/FeatureProperties";
 import { CustomImage, CustomFlex } from "../../../components/Shared";
 
 const Section2: React.FC = () => (
-  <CustomFlex
-    direction="column"
-    h={["100%", "100vh"]}
-    minH={[null, "800px"]}
-    py={["20%", 0]}
-  >
+  <CustomFlex direction="column" minH={["100%", "800px"]}>
     {/* Section 2 - Feature Properties Subsection */}
     <FeatureProperties />
 
@@ -19,7 +14,7 @@ const Section2: React.FC = () => (
     <CustomFlex
       direction={["column", "row"]}
       justify="space-between"
-      w={["85%", "80%"]}
+      w="80%"
       gap={[20, null]}
     >
       {Section2Data.pageGridImages.imageAssets?.map(
@@ -28,7 +23,7 @@ const Section2: React.FC = () => (
             key={index}
             src={icon.image}
             alt={icon.alt}
-            boxSize={["700px", "16vw"]}
+            boxSize={["350px", "12vw"]}
           />
         )
       )}

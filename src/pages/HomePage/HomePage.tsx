@@ -1,7 +1,7 @@
 // HomePage.tsx
 import * as Section from "./index";
-import Section6 from "./Section6/Section6";
 import { CustomFlex } from "../../components/Shared";
+import Section6 from "./Section6/Section6";
 
 const HomePage: React.FC = () => {
   const sections = Object.values(Section);
@@ -9,10 +9,11 @@ const HomePage: React.FC = () => {
   return (
     <CustomFlex direction="column">
       {sections.map((SectionComponent, index) => (
-        <CustomFlex key={index} direction="column">
+        <CustomFlex key={index} direction="column" mb={[32, 24]}>
           <SectionComponent />
         </CustomFlex>
       ))}
+
       <Section6 />
     </CustomFlex>
   );

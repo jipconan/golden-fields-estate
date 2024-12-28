@@ -24,7 +24,7 @@ const LocationSearchBar: React.FC = () => {
   };
 
   return (
-    <CustomFlex direction="row" minH="200px">
+    <CustomFlex direction="row" py={8}>
       <MenuBar
         categories={[LOCATIONS, HOUSING_TYPES, PRICING]}
         selections={[selectedLocation, selectedHousingType, selectedPricing]}

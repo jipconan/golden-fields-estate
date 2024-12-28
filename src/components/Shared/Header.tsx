@@ -14,9 +14,8 @@ const HeaderLogo: React.FC<ImageProps> = (props) => (
     objectFit={["cover", "contain"]}
     align="start"
     justifyContent="start"
-    w={["auto", "180px"]}
-    h={["60px", "auto"]}
-    my={[8, 0]}
+    w={["100%", "8em"]}
+    h={["30px", "auto"]}
     {...props}
   />
 );
@@ -29,10 +28,9 @@ const Header: React.FC<SectionData> = () => {
       direction={["column", "row"]}
       justify="space-between"
       align={["start", "center"]}
-      minH={[null, "10vh"]}
-      p={[12, 8]}
+      h={["300px", "10vh"]}
+      p={[6, 8]}
       boxShadow="lg"
-      minW={["850px", "100%"]}
     >
       {/* Header Logo */}
       <HeaderLogo />
@@ -46,7 +44,7 @@ const Header: React.FC<SectionData> = () => {
           bg="white"
           w={["100%", "50%"]}
           gap={[8, 0]}
-          my={[8, 0]}
+          my={[4, 0]}
         >
           {/* Map through the links in headerData.headerLinks and render them */}
           {headerData.headerLinks?.textLinks &&
@@ -58,6 +56,7 @@ const Header: React.FC<SectionData> = () => {
                   aria-label={link.name}
                   alignContent="start"
                   justifyContent="start"
+                  fontSize={["20px", "2xl"]}
                 >
                   {link.name}
                 </CustomLink>

@@ -5,28 +5,17 @@ import { CustomFlex, CustomHeader, CustomText, CustomLink } from "../Shared";
 
 // FooterSection component: responsible for rendering each section of the footer dynamically
 const FooterSection: React.FC<{ section: Section }> = ({ section }) => (
-  <CustomFlex
-    direction="column"
-    align="flex-start"
-    justify="flex-start"
-    m={[4, null]}
-    px={[4, null]}
-  >
+  <CustomFlex direction="column" align="flex-start" justify="flex-start">
     {section.heading ? (
       // Render the heading if it exists
-      <CustomHeader
-        size={["3xl", "2xl"]}
-        mb={8}
-        textAlign="start"
-        color="white"
-      >
+      <CustomHeader size={["lg", "2xl"]} mb={2} textAlign="start" color="white">
         {section.heading}
       </CustomHeader>
     ) : (
       // If heading is empty, render a hidden placeholder
       <CustomHeader
         size={["3xl", "2xl"]}
-        mb={8}
+        mb={2}
         textAlign="start"
         visibility="hidden"
       >
@@ -40,7 +29,7 @@ const FooterSection: React.FC<{ section: Section }> = ({ section }) => (
         direction="column"
         align="flex-start"
         justify="flex-start"
-        gap={[8, 2]}
+        gap={[2, 2]}
         my={0}
       >
         {section.textLinks.map((link, index) => (
@@ -48,7 +37,7 @@ const FooterSection: React.FC<{ section: Section }> = ({ section }) => (
             key={index}
             href={link.url}
             aria-label={link.name}
-            fontSize={["4xl", "2xl"]}
+            fontSize={["20px", "2xl"]}
             fontWeight="300"
             textAlign="start"
             color="white"
@@ -66,7 +55,7 @@ const FooterSection: React.FC<{ section: Section }> = ({ section }) => (
     {/* Render text if the section contains any */}
     {section.texts && (
       <CustomText
-        fontSize={["4xl", "2xl"]}
+        fontSize={["20px", "2xl"]}
         fontWeight="300"
         textAlign="start"
         color="white"
@@ -89,12 +78,12 @@ const Footer: React.FC = () => {
     <CustomFlex
       as="footer"
       direction={["column", "row"]}
-      px={[8, 32]}
-      py={[36, 14]}
+      p={[8, 32]}
       align="flex-start"
       justify="space-between"
       bg="customGray"
       gap={[12, null]}
+      h={["800px", "100%"]}
     >
       {/* Dynamically render each section in the footer by mapping through the footerData */}
       {Object.values(footerData).map((section, index) => (

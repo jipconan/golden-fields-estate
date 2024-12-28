@@ -5,7 +5,7 @@ import { CustomImage, CustomHeader, CustomText, CustomFlex } from "../Shared";
 
 const LocationSection: React.FC = () => {
   return (
-    <CustomFlex direction="column" w="80%" h="60%">
+    <CustomFlex direction="column" w="80%">
       {/* Section 2 - Location Subsection */}
       <CustomFlex direction="column">
         {/* Location Subsection - Title and Text */}
@@ -14,9 +14,7 @@ const LocationSection: React.FC = () => {
             textAlign="start"
             fontWeight="700"
             color="black"
-            fontSize={["8xl", "6xl", "9xl"]}
-            w="100%"
-            h="100%"
+            fontSize={["50px", "6xl", "9xl"]}
           >
             {Section2Data.pageTitle2?.heading}
           </CustomHeader>
@@ -27,16 +25,13 @@ const LocationSection: React.FC = () => {
             lineHeight="1.2"
             w={["100%", "200%"]}
             h="100%"
-            fontSize={["5xl", "2xl", "3xl"]}
+            fontSize={["20px", "2xl", "3xl"]}
             mb={[8, 0]}
           >
             {Section2Data.pageText2?.text}
           </CustomText>
         </CustomFlex>
-        <CustomImage
-          src={LOCATION_IMAGE.image}
-          blockSize={["1080px", "500px"]}
-        />
+        <CustomImage src={LOCATION_IMAGE.image} blockSize={["300px", "30em"]} />
         <LocationSearchBar />
       </CustomFlex>
     </CustomFlex>

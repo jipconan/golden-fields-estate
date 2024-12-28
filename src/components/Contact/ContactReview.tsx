@@ -6,25 +6,23 @@ import { CustomBox, CustomFlex, CustomText, CustomImage } from "../Shared";
 
 const ContactReview: React.FC = () => {
   return (
-    <CustomBox
-      border="1px solid gainsboro"
-      boxShadow={["md", "lg"]}
-      p="16px"
-      m="16px auto"
-      py={8}
-      minW="500px"
-    >
-      <CustomFlex alignItems="center" mb="16px">
+    <CustomBox border="1px solid gainsboro" boxShadow={["md", "lg"]} p={8}>
+      <CustomFlex
+        alignItems="center"
+        direction={["column", "row"]}
+        mb="16px"
+        gap={[12, 0]}
+      >
         <CustomImage
           src={ContactReviewImage.image}
           alt="Profile"
-          boxSize={["300px", "200px"]}
+          boxSize={["200px", "200px"]}
           borderRadius="full"
-          mr="16px"
+          mr={[0, "2em"]}
         />
         <CustomBox>
           <CustomText
-            fontSize={["6xl", "60px"]}
+            fontSize={["30px", "60px"]}
             fontWeight="bold"
             lineHeight={1.0}
           >
@@ -38,7 +36,7 @@ const ContactReview: React.FC = () => {
         </CustomBox>
       </CustomFlex>
       <CustomBox>
-        <CustomText fontWeight="500" fontSize={["3xl", "initial"]}>
+        <CustomText fontWeight="500" fontSize={["16px", "1.5em"]}>
           {String(ContactReviewData.pageText.text)}
         </CustomText>
       </CustomBox>

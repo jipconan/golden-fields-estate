@@ -17,12 +17,13 @@ const ContactSection: React.FC = () => {
       direction={{ base: "column", md: "row" }}
       align="center"
       justify="center"
+      py={10}
     >
       <CustomBox flex="1" p={4}>
-        <CustomHeader as="h2" fontSize="9xl" mb={4}>
+        <CustomHeader as="h2" fontSize="5xl" mb={4}>
           {ContactTextData.pageTitle.heading}
         </CustomHeader>
-        <CustomText fontSize={["5xl", "xl"]} mb={4}>
+        <CustomText fontSize={["20px", "2xl"]} mb={4}>
           {ContactTextData.pageText.text}
         </CustomText>
         <ContactReview />
@@ -30,12 +31,12 @@ const ContactSection: React.FC = () => {
       <CustomBox flex="1" p={4} w="100%" h="100%">
         <form>
           {CONTACT_FORM.map((field: string) => (
-            <FormControl id={field} mb={4} key={field} h={["200px", "100px"]}>
-              <FormLabel fontSize={["5xl", "3xl"]}>{field}</FormLabel>
+            <FormControl id={field} mb={4} key={field} h={["100%", "100px"]}>
+              <FormLabel fontSize={["20px", "2xl"]}>{field}</FormLabel>
               <Input
                 type="text"
-                h={["100px", "50px"]}
-                fontSize={["5xl", "3xl"]}
+                h={["50px", "50px"]}
+                fontSize={["20px", "2xl"]}
                 fontWeight="100"
               />
             </FormControl>
@@ -44,7 +45,7 @@ const ContactSection: React.FC = () => {
             onClick={() => alert("Form submitted!")}
             type="submit"
             buttonName="Submit"
-            w={["100%", null]}
+            minW={["100%", "20em"]}
           />
         </form>
       </CustomBox>
