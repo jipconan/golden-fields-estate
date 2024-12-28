@@ -1,8 +1,8 @@
 import axios from "axios";
 import { PropertyProps } from "../types/generalTypes";
 
-const BASE_URL = "https://golden-fields-backend.onrender.com/properties";
-// const BASE_URL = "http://localhost:3000/properties";
+// const BASE_URL = "https://golden-fields-backend.onrender.com/properties";
+const BASE_URL = "http://localhost:3000/properties";
 
 // Fetches all properties from the backend.
 export async function getAllProperties(): Promise<PropertyProps[]> {

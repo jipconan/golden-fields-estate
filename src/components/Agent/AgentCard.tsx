@@ -14,16 +14,16 @@ const AgentCard: React.FC<AgentCardProps> = ({ data, onContact }) => {
       <CustomImage
         src={data.imageUrl[0]}
         alt={data.name}
-        h={["800px", "240px"]}
+        h={["300px", "240px"]}
       />
-      <CustomBox p={[8, 4]} minH={[null, "150px"]}>
-        <CustomHeader as="h3" size={["4xl", "lg"]} mb={[8, 0]}>
+      <CustomBox p={[6, 4]} minH={[null, "150px"]}>
+        <CustomHeader as="h3" size={["2xl", "lg"]} mb={[2, 0]}>
           {data.name}
         </CustomHeader>
-        <CustomText fontSize={["4xl", "xl"]} color="gray.500" mb={4}>
+        <CustomText fontSize={["20px", "xl"]} color="gray.500" mb={2}>
           {data.availability}
         </CustomText>
-        <CustomText fontSize={["4xl", "xl"]} fontWeight="300" mb={4}>
+        <CustomText fontSize={["20px", "xl"]} fontWeight="300" mb={2}>
           {data.description}
         </CustomText>
       </CustomBox>
@@ -31,8 +31,8 @@ const AgentCard: React.FC<AgentCardProps> = ({ data, onContact }) => {
         bgColor="lightgrey"
         _hover={{ bg: "grey" }}
         onClick={onContact}
-        minH={["125px", "55px"]}
-        fontSize={["5xl", "2xl"]}
+        minH={["65px", "55px"]}
+        fontSize={["20px", "2xl"]}
         fontWeight={300}
         borderRadius={0}
         buttonName="Contact"

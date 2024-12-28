@@ -18,28 +18,28 @@ const Section4: React.FC = () => {
   }
 
   return (
-    <CustomFlex direction="column" minH={[null, "1200px"]} py={["20%", 0]}>
+    <CustomFlex direction="column" minH={[null, "800px"]}>
       <CustomFlex direction={["column", "row"]} w="80%" gap={4} my={[24, null]}>
         {/* Section 4 - Title Subsection */}
         <CustomFlex direction="column">
           <CustomHeader
-            fontSize={["8xl", "7xl", "9xl"]}
+            fontSize={["50px", "7xl", "9xl"]}
             lineHeight={1}
             textAlign="start"
           >
             {Section4Data.pageTitle.heading}
           </CustomHeader>
-          <CustomHeader fontSize={["8xl", "5xl", "7xl"]} textAlign="start">
+          <CustomHeader fontSize={["40px", "5xl", "7xl"]} textAlign="start">
             {Section4Data.pageText.text}
           </CustomHeader>
         </CustomFlex>
 
         {/* Section 4 - Description Subsection */}
         <CustomFlex direction="column" minH={[null, "400px"]}>
-          <CustomHeader fontSize={["5xl", "3xl", "5xl"]}>
+          <CustomHeader fontSize={["30px", "3xl", "5xl"]}>
             {Section4Data.pageTitle2.heading}
           </CustomHeader>
-          <CustomText fontSize={["5xl", "lg", "3xl"]}>
+          <CustomText fontSize={["20px", "lg", "3xl"]}>
             {Section4Data.pageText2.text}
           </CustomText>
         </CustomFlex>
@@ -66,9 +66,6 @@ const Section4: React.FC = () => {
       <CustomButton
         onClick={() => (window.location.href = "/agents")}
         buttonName="View More"
-        minW={["500px", "300px"]}
-        minH={["100px", "50px"]}
-        fontSize={["5xl", "lg"]}
       />
     </CustomFlex>
   );

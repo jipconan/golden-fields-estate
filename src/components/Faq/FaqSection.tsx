@@ -11,8 +11,8 @@ import { FaqSectionData } from "../../data/FaqData";
 
 const FaqSection: React.FC = () => {
   return (
-    <CustomFlex direction="column" bgColor="teal.500" color="white" p={24}>
-      <CustomHeader fontSize={["8xl", "6xl"]} my={4} color="white">
+    <CustomFlex direction="column" bgColor="teal.500" color="white" p={[8, 24]}>
+      <CustomHeader fontSize={["50px", "6xl"]} my={4} color="white">
         FAQ
       </CustomHeader>
       <Accordion allowToggle w="100%">
@@ -23,16 +23,21 @@ const FaqSection: React.FC = () => {
             borderBottom="1px solid white"
           >
             <h2>
-              <AccordionButton fontSize={["5xl", "xl"]}>
+              <AccordionButton fontSize={["20px", "xl"]}>
                 <CustomBox flex="1">
-                  <CustomText fontSize={["5xl", "2xl"]} color="white">
+                  <CustomText fontSize={["20px", "2xl"]} color="white">
                     {faq.question}
                   </CustomText>
                 </CustomBox>
                 <AccordionIcon />
               </AccordionButton>
             </h2>
-            <AccordionPanel pb={4} fontSize={["5xl", "xl"]} textAlign="start">
+            <AccordionPanel
+              pb={4}
+              fontSize={["20px", "xl"]}
+              fontWeight="500"
+              textAlign="start"
+            >
               {faq.answer}
             </AccordionPanel>
           </AccordionItem>

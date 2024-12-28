@@ -13,14 +13,14 @@ const FeatureProperties: React.FC = () => {
   const [selectedIndex, setSelectedIndex] = useState(1);
 
   return (
-    <CustomFlex direction="column" py={[24, 4]} w={["95%", "100%"]}>
+    <CustomFlex direction="column" w={["95%", "100%"]}>
       {/* Title & Description */}
       <CustomFlex direction="column" textAlign="center">
         <CustomHeader
           textAlign="center"
           fontWeight="700"
           color="black"
-          fontSize={["8xl", "9xl"]}
+          fontSize={["50px", "9xl"]}
           lineHeight="0.85"
           my={8}
         >
@@ -31,7 +31,7 @@ const FeatureProperties: React.FC = () => {
           fontWeight="300"
           color="black"
           lineHeight="1.4"
-          fontSize={["40px", "3xl"]}
+          fontSize={["20px", "3xl"]}
           textOverflow="clip"
           mb={4}
         >
@@ -63,7 +63,7 @@ const FeatureProperties: React.FC = () => {
                 <CustomImage
                   src={imageAsset.image}
                   alt={imageAsset.alt}
-                  blockSize={["300px", "200px"]}
+                  blockSize={["120px", "16em"]}
                   transition="transform 0.3s ease-in-out"
                 />
               </CustomBox>
@@ -72,11 +72,11 @@ const FeatureProperties: React.FC = () => {
         </CustomFlex>
 
         {/* Circle Indicators */}
-        <CustomFlex direction="row" gap={[12, 12]} py={4}>
+        <CustomFlex direction="row" gap={[8, 12]} mb={12}>
           {Section2Data.pageGalleryImages.imageAssets?.map((_, index) => (
             <Circle
               key={index}
-              size={["30px", "18px"]}
+              size={["20px", "1em"]}
               bg={selectedIndex === index ? "blue.500" : "gray.300"}
               cursor="pointer"
               onClick={() => setSelectedIndex(index)}
