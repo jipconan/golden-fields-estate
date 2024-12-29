@@ -16,16 +16,16 @@ const Section1: React.FC = () => (
     backgroundPosition="center"
     backgroundRepeat="no-repeat"
     h={["100%", "100vh"]}
-    minH={["100%", "600px"]}
+    minH={["100%", "sm", "md", "lg"]}
   >
     <CustomFlex
       direction="column"
       justify={["center", "space-between"]}
-      py={["30%", "4%"]}
+      py={["30%", "5%", "4%"]}
     >
       {/* Landing Page - Title */}
       <CustomHeader
-        fontSize={["50px", "8xl"]}
+        fontSize={["50px", "5xl", "6xl", "10em"]}
         fontWeight="700"
         fontFamily="cormorantSc"
         textShadow={[
@@ -40,14 +40,14 @@ const Section1: React.FC = () => (
       </CustomHeader>
 
       {/* Icon Section */}
-      <CustomFlex position="relative" h="auto" w={["90%", "70%"]}>
+      <CustomFlex position="relative" h="auto" w={["90%", "80%", "70%"]}>
         {/* Icon Section - white line */}
         <Box
           position="absolute"
           h={["1px", "2px"]}
-          w={["85%", "90%"]}
+          w="85%"
           bg="white"
-          top={["20%", "30%"]}
+          top={["20%", "20%", "25%", "30%"]}
           zIndex="0"
         />
 
@@ -69,10 +69,10 @@ const Section1: React.FC = () => (
                 imageProps={{
                   p: 2,
                   bg: "iconGreen",
-                  blockSize: ["50px", "7em"],
+                  blockSize: ["50px", "4em", "5em", "12em"],
                 }}
                 headingProps={{
-                  fontSize: ["15px", "2xl"],
+                  fontSize: ["15px", "lg", "xl", "4xl"],
                   w: "80%",
                   color: "white",
                   bgColor: "rgba(0, 0, 0, 0.5)",

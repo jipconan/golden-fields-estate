@@ -13,14 +13,14 @@ const FeatureProperties: React.FC = () => {
   const [selectedIndex, setSelectedIndex] = useState(1);
 
   return (
-    <CustomFlex direction="column" w={["95%", "100%"]}>
+    <CustomFlex direction="column" w={["95%", "85%", "85%", "100%"]}>
       {/* Title & Description */}
       <CustomFlex direction="column" textAlign="center">
         <CustomHeader
           textAlign="center"
           fontWeight="700"
           color="black"
-          fontSize={["50px", "9xl"]}
+          fontSize={["50px", "6xl", "6xl", "9xl"]}
           lineHeight="0.85"
           my={8}
         >
@@ -31,7 +31,7 @@ const FeatureProperties: React.FC = () => {
           fontWeight="300"
           color="black"
           lineHeight="1.4"
-          fontSize={["20px", "3xl"]}
+          fontSize={["20px", "xl", "xl", "3xl"]}
           textOverflow="clip"
           mb={4}
         >
@@ -45,7 +45,7 @@ const FeatureProperties: React.FC = () => {
         <CustomFlex
           direction={["column", "row"]}
           justify={["center", "space-between"]}
-          w={["65%", "80%"]}
+          w={["65%", "90%", "90%", "80%"]}
           my={[8, 4]}
         >
           {Section2Data.pageGalleryImages.imageAssets?.map(
@@ -63,7 +63,7 @@ const FeatureProperties: React.FC = () => {
                 <CustomImage
                   src={imageAsset.image}
                   alt={imageAsset.alt}
-                  blockSize={["120px", "16em"]}
+                  blockSize={["120px", "6em", "8em", "16em"]}
                   transition="transform 0.3s ease-in-out"
                 />
               </CustomBox>
@@ -72,11 +72,11 @@ const FeatureProperties: React.FC = () => {
         </CustomFlex>
 
         {/* Circle Indicators */}
-        <CustomFlex direction="row" gap={[8, 12]} mb={12}>
+        <CustomFlex direction="row" gap={[8, 8, 12]} mb={12}>
           {Section2Data.pageGalleryImages.imageAssets?.map((_, index) => (
             <Circle
               key={index}
-              size={["20px", "1em"]}
+              size={["20px", "0.8em", "1em"]}
               bg={selectedIndex === index ? "blue.500" : "gray.300"}
               cursor="pointer"
               onClick={() => setSelectedIndex(index)}

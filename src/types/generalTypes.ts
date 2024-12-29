@@ -49,12 +49,7 @@ export interface AgentProps {
   email: string;
   phone: string;
   properties: string[];
-  availability: string;
-}
-
-export interface AgentCardProps {
-  data: AgentProps;
-  onContact: () => void;
+  availability: boolean;
 }
 
 export interface PropertyProps {
@@ -72,7 +67,7 @@ export interface PropertyProps {
   agents: string[];
 }
 
-export interface PropertyCardProps {
-  data: PropertyProps;
+export interface CardProps {
+  data: AgentProps | PropertyProps;
   onContact: () => void;
 }

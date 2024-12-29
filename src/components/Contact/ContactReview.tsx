@@ -16,13 +16,13 @@ const ContactReview: React.FC = () => {
         <CustomImage
           src={ContactReviewImage.image}
           alt="Profile"
-          boxSize={["200px", "200px"]}
+          boxSize={["200px", "10em", "10em", "20em"]}
           borderRadius="full"
           mr={[0, "2em"]}
         />
         <CustomBox>
           <CustomText
-            fontSize={["30px", "60px"]}
+            fontSize={["30px", "3em", "3em", "4em"]}
             fontWeight="bold"
             lineHeight={1.0}
           >
@@ -36,7 +36,7 @@ const ContactReview: React.FC = () => {
         </CustomBox>
       </CustomFlex>
       <CustomBox>
-        <CustomText fontWeight="500" fontSize={["16px", "1.5em"]}>
+        <CustomText fontWeight="500" fontSize={["16px", "1em", "1em", "1.5em"]}>
           {String(ContactReviewData.pageText.text)}
         </CustomText>
       </CustomBox>
