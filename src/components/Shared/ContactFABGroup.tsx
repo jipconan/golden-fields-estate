@@ -28,9 +28,9 @@ const ContactFABGroup: React.FC<SectionData> = () => {
               href={link.url}
               src={link.image}
               alt="Contact Logo"
-              boxSize={["50px", "80px"]}
+              boxSize={["50px", "50px", "50px", "80px"]}
               my={2}
-              p={[2, 6]}
+              p={[2, 4, 4, 6]}
               borderRadius="50%"
               bg="iconGreen"
             />

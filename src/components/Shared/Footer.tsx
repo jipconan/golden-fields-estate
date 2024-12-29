@@ -8,13 +8,18 @@ const FooterSection: React.FC<{ section: Section }> = ({ section }) => (
   <CustomFlex direction="column" align="flex-start" justify="flex-start">
     {section.heading ? (
       // Render the heading if it exists
-      <CustomHeader size={["lg", "2xl"]} mb={2} textAlign="start" color="white">
+      <CustomHeader
+        fontSize={["20px", "md", "lg", "3xl"]}
+        mb={2}
+        textAlign="start"
+        color="white"
+      >
         {section.heading}
       </CustomHeader>
     ) : (
       // If heading is empty, render a hidden placeholder
       <CustomHeader
-        size={["3xl", "2xl"]}
+        fontSize={["20px", "md", "lg", "3xl"]}
         mb={2}
         textAlign="start"
         visibility="hidden"
@@ -29,7 +34,7 @@ const FooterSection: React.FC<{ section: Section }> = ({ section }) => (
         direction="column"
         align="flex-start"
         justify="flex-start"
-        gap={[2, 2]}
+        gap={[2, 2, 4, 8]}
         my={0}
       >
         {section.textLinks.map((link, index) => (
@@ -37,7 +42,7 @@ const FooterSection: React.FC<{ section: Section }> = ({ section }) => (
             key={index}
             href={link.url}
             aria-label={link.name}
-            fontSize={["20px", "2xl"]}
+            fontSize={["20px", "md", "lg", "3xl"]}
             fontWeight="300"
             textAlign="start"
             color="white"
@@ -55,7 +60,7 @@ const FooterSection: React.FC<{ section: Section }> = ({ section }) => (
     {/* Render text if the section contains any */}
     {section.texts && (
       <CustomText
-        fontSize={["20px", "2xl"]}
+        fontSize={["20px", "md", "lg", "3xl"]}
         fontWeight="300"
         textAlign="start"
         color="white"
@@ -78,7 +83,8 @@ const Footer: React.FC = () => {
     <CustomFlex
       as="footer"
       direction={["column", "row"]}
-      p={[8, 32]}
+      py={[8, 8, 10, 32]}
+      px={[8, 20, 20, 32]}
       align="flex-start"
       justify="space-between"
       bg="customGray"

@@ -14,7 +14,7 @@ const HeaderLogo: React.FC<ImageProps> = (props) => (
     objectFit={["cover", "contain"]}
     align="start"
     justifyContent="start"
-    w={["100%", "8em"]}
+    w={["100%", "4em", "6em", "8em"]}
     h={["30px", "auto"]}
     {...props}
   />
@@ -40,7 +40,7 @@ const Header: React.FC<SectionData> = () => {
         <CustomFlex
           direction={["column", "row"]}
           justify={["start", "space-between"]}
-          align="start"
+          align={["start", "center"]}
           bg="white"
           w={["100%", "50%"]}
           gap={[8, 0]}
@@ -56,7 +56,7 @@ const Header: React.FC<SectionData> = () => {
                   aria-label={link.name}
                   alignContent="start"
                   justifyContent="start"
-                  fontSize={["20px", "2xl"]}
+                  fontSize={["20px", "sm", "xl", "3xl"]}
                 >
                   {link.name}
                 </CustomLink>

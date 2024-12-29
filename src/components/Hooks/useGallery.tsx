@@ -6,7 +6,7 @@ import { getAllProperties } from "../../service/properties";
 
 type DataProps = AgentProps | PropertyProps;
 
-const useGallery = (type: string) => {
+const useGallery = (type: "agents" | "properties") => {
   const [datas, setDatas] = useState<DataProps[]>([]);
   const [visibleDatas, setVisibleDatas] = useState(4);
   const { loading, setLoading, LoadingComponent } = useLoading();
@@ -15,13 +15,9 @@ const useGallery = (type: string) => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        if (type === "agents") {
-          const data: AgentProps[] = await getAllAgents();
-          setDatas(data);
-        } else if (type === "properties") {
-          const data: PropertyProps[] = await getAllProperties();
-          setDatas(data);
-        }
+        const data =
+          type === "agents" ? await getAllAgents() : await getAllProperties();
+        setDatas(data);
       } catch (error) {
         console.error(`Error fetching ${type}:`, error);
       } finally {
@@ -30,12 +26,14 @@ const useGallery = (type: string) => {
     };
 
     fetchData();
-  }, []);
+  }, [type]);
 
   const currentDatas = datas.slice(0, visibleDatas);
 
   const handleViewMore = () => {
-    setVisibleDatas((prevVisibleDatas) => prevVisibleDatas + 4);
+    setVisibleDatas((prevVisibleDatas) =>
+      Math.min(prevVisibleDatas + 4, datas.length)
+    );
   };
 
   return {

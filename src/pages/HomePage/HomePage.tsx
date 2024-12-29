@@ -9,7 +9,7 @@ const HomePage: React.FC = () => {
   return (
     <CustomFlex direction="column">
       {sections.map((SectionComponent, index) => (
-        <CustomFlex key={index} direction="column" mb={[32, 24]}>
+        <CustomFlex key={index} direction="column" mb={[32, 12, 12, 24]}>
           <SectionComponent />
         </CustomFlex>
       ))}

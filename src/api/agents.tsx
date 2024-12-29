@@ -1,8 +1,8 @@
 import axios from "axios";
 import { AgentProps } from "../types/generalTypes";
 
-const BASE_URL = "https://golden-fields-backend.onrender.com/agents";
-// const BASE_URL = "http://localhost:3000/agents";
+// const BASE_URL = "https://golden-fields-backend.onrender.com/agents";
+const BASE_URL = "http://localhost:3000/agents";
 
 // Fetches all agents from the backend.
 export async function getAllAgents(): Promise<AgentProps[]> {

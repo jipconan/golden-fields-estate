@@ -13,7 +13,7 @@ const PropertiesPage: React.FC = () => {
       <CustomFlex
         direction="column"
         minW={["100%", "20vw"]}
-        minH={[null, "860px"]}
+        minH={["100%", "460px", "860px"]}
       >
         {/* Feature Properties Component */}
         <FeatureProperties />

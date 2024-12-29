@@ -1,6 +1,6 @@
 import { Section2Data } from "../../data/HomePageData";
 import { LOCATION_IMAGE } from "../../constants/mediaConstants";
-import { LocationSearchBar } from "./LocationSearchBar";
+import { SearchBar } from "../Shared";
 import { CustomImage, CustomHeader, CustomText, CustomFlex } from "../Shared";
 
 const LocationSection: React.FC = () => {
@@ -14,7 +14,7 @@ const LocationSection: React.FC = () => {
             textAlign="start"
             fontWeight="700"
             color="black"
-            fontSize={["50px", "6xl", "9xl"]}
+            fontSize={["50px", "5xl", "6xl", "9xl"]}
           >
             {Section2Data.pageTitle2?.heading}
           </CustomHeader>
@@ -25,14 +25,17 @@ const LocationSection: React.FC = () => {
             lineHeight="1.2"
             w={["100%", "200%"]}
             h="100%"
-            fontSize={["20px", "2xl", "3xl"]}
+            fontSize={["20px", "sm", "md", "3xl"]}
             mb={[8, 0]}
           >
             {Section2Data.pageText2?.text}
           </CustomText>
         </CustomFlex>
-        <CustomImage src={LOCATION_IMAGE.image} blockSize={["300px", "30em"]} />
-        <LocationSearchBar />
+        <CustomImage
+          src={LOCATION_IMAGE.image}
+          blockSize={["300px", "12em", "12em", "30em"]}
+        />
+        <SearchBar type="properties" />
       </CustomFlex>
     </CustomFlex>
   );
