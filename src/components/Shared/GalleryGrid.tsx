@@ -55,7 +55,8 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({
                   key={index}
                   flex={`0 0 calc(100% / ${itemsToSlice})`}
                   mx={0}
-                  p={[0, 2, 2, 2]}
+                  px={[0, 2, 2, 4]}
+                  py={[2, 2, 2, 4]}
                 >
                   <GalleryCard
                     data={data}
