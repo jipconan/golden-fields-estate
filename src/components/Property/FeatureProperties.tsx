@@ -15,7 +15,7 @@ const FeatureProperties: React.FC = () => {
   return (
     <CustomFlex direction="column" w={["95%", "85%", "85%", "100%"]}>
       {/* Title & Description */}
-      <CustomFlex direction="column" textAlign="center">
+      <CustomFlex direction="column" textAlign="center" my={[2, 2, 2, 8]}>
         <CustomHeader
           textAlign="center"
           fontWeight="700"
@@ -40,13 +40,13 @@ const FeatureProperties: React.FC = () => {
       </CustomFlex>
 
       {/* Image Gallery */}
-      <CustomFlex direction="column" gap={8}>
+      <CustomFlex direction="column">
         {/* Gallery Images */}
         <CustomFlex
           direction={["column", "row"]}
           justify={["center", "space-between"]}
           w={["65%", "90%", "90%", "80%"]}
-          my={[8, 4]}
+          my={[4, 4, 4, 8]}
         >
           {Section2Data.pageGalleryImages.imageAssets?.map(
             (imageAsset, index) => (
@@ -63,7 +63,7 @@ const FeatureProperties: React.FC = () => {
                 <CustomImage
                   src={imageAsset.image}
                   alt={imageAsset.alt}
-                  blockSize={["120px", "6em", "8em", "16em"]}
+                  blockSize={["120px", "6em", "8em", "20em"]}
                   transition="transform 0.3s ease-in-out"
                 />
               </CustomBox>
@@ -72,11 +72,11 @@ const FeatureProperties: React.FC = () => {
         </CustomFlex>
 
         {/* Circle Indicators */}
-        <CustomFlex direction="row" gap={[8, 8, 12]} mb={12}>
+        <CustomFlex direction="row" gap={[8, 8, 8, 12]} my={[4, 6, 6, 12]}>
           {Section2Data.pageGalleryImages.imageAssets?.map((_, index) => (
             <Circle
               key={index}
-              size={["20px", "0.8em", "1em"]}
+              size={["20px", "0.8em", "1em", "1.5em"]}
               bg={selectedIndex === index ? "blue.500" : "gray.300"}
               cursor="pointer"
               onClick={() => setSelectedIndex(index)}

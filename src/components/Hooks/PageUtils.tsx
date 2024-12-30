@@ -12,13 +12,13 @@ export function useLoading() {
     if (loading) {
       return (
         <CustomBox bg="white">
-          <CustomFlex>
+          <CustomFlex my={8} h="100vh" minH="100%">
             <Spinner
-              thickness="4px"
+              thickness="8px"
               speed="0.65s"
               emptyColor="gray.200"
-              color="gray.500"
-              size="xl"
+              color="teal.500"
+              size={["xl", "xxl"]}
             />
           </CustomFlex>
         </CustomBox>
