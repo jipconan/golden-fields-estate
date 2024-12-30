@@ -38,6 +38,7 @@ export interface ContactInfo {
 }
 
 export interface AgentProps {
+  _id: string;
   name: string;
   experience: number;
   languages: string[];
@@ -50,9 +51,11 @@ export interface AgentProps {
   phone: string;
   properties: string[];
   availability: boolean;
+  type: string;
 }
 
 export interface PropertyProps {
+  _id: string;
   name: string;
   location: string;
   propertyType: string;
@@ -65,9 +68,11 @@ export interface PropertyProps {
   bathrooms: number;
   status: string;
   agents: string[];
+  type: string;
+  size: number;
 }
 
 export interface CardProps {
   data: AgentProps | PropertyProps;
-  onContact: () => void;
+  onViewDetails: () => void;
 }

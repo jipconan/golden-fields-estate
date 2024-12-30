@@ -21,7 +21,9 @@ function App() {
               path="/propertiesgallery"
               element={<Pages.PropertiesGalleryPage />}
             />
+            <Route path="/property/:id" element={<Pages.PropertyPage />} />
             <Route path="/agents" element={<Pages.AgentGalleryPage />} />
+            <Route path="/agent/:id" element={<Pages.AgentPage />} />
             <Route path="/about" element={<Pages.AboutPage />} />
             <Route path="/contact" element={<Pages.ContactPage />} />
           </Routes>

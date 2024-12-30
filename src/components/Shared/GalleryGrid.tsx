@@ -9,6 +9,7 @@ type GalleryGridProps = {
   visibleDatas?: number;
   handleViewMore?: () => void;
   galleryGridCheck: boolean;
+  onViewDetails?: () => void;
 };
 
 const GalleryGrid: React.FC<GalleryGridProps> = ({
@@ -18,7 +19,7 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({
   handleViewMore,
   galleryGridCheck,
 }) => {
-  const itemsToSlice = useBreakpointValue([4, 3, 3, 4]) || 4;
+  const itemsToSlice = useBreakpointValue([4, 2, 2, 3, 3, 3, 4]) || 4;
 
   return (
     <>
@@ -34,7 +35,9 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({
             >
               <GalleryCard
                 data={data}
-                onContact={() => alert(`Contacting ${data.name}`)}
+                onViewDetails={() =>
+                  (window.location.href = `/${data.type}/` + data._id)
+                }
               />
             </CustomFlex>
           ))}
@@ -61,7 +64,9 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({
                 >
                   <GalleryCard
                     data={data}
-                    onContact={() => alert(`Contacting ${data.name}`)}
+                    onViewDetails={() =>
+                      (window.location.href = `/${data.type}/` + data._id)
+                    }
                   />
                 </CustomFlex>
               ))}

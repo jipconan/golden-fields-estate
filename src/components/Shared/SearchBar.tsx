@@ -18,7 +18,7 @@ const CustomMenuButton: React.FC<MenuButtonProps> = (props) => (
   <MenuButton
     as={Button}
     w={["100%", "8em", "8em", "8em"]}
-    h={["70px", "6em", "6em", "8em"]}
+    h={["70px", "6em", "6em", "6em"]}
     fontSize={["10px", "xs", "xs", "2xl"]}
     borderRadius="0"
     border="1px solid gray"
@@ -36,7 +36,7 @@ interface SearchBarProps {
 
 const SearchBar: React.FC<SearchBarProps> = ({ type }) => {
   // Set default label for each button based on the type
-  const initialParam0 = type === "agents" ? "Agent Names" : "Location";
+  const initialParam0 = type === "agents" ? "Names" : "Location";
   const initialParam1 = type === "agents" ? "Experience" : "Housing Type";
   const initialParam2 = type === "agents" ? "Languages" : "Pricing";
 
@@ -86,7 +86,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ type }) => {
               <MenuItem
                 key={idx}
                 onClick={() => handleSelect(index, item.toString())}
-                fontSize={["20px", "1em", "initial"]}
+                fontSize={["20px", "xs", "sm", "3xl"]}
               >
                 {item}
               </MenuItem>

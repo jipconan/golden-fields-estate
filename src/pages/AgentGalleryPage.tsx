@@ -26,7 +26,7 @@ const AgentGalleryPage: React.FC = () => {
       my={8}
     >
       <CustomFlex direction="column" w="80%">
-        <SearchBar type="properties" />
+        <SearchBar type="agents" />
 
         <CustomHeader
           textAlign="start"

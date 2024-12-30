@@ -18,7 +18,11 @@ const FaqSection: React.FC = () => {
       py={[8, 10, 24]}
       px={[8, 16, 24]}
     >
-      <CustomHeader fontSize={["50px", "4xl", "6xl"]} my={4} color="white">
+      <CustomHeader
+        fontSize={["50px", "4xl", "6xl", "7xl"]}
+        my={4}
+        color="white"
+      >
         FAQ
       </CustomHeader>
       <Accordion allowToggle w="100%">
@@ -31,7 +35,10 @@ const FaqSection: React.FC = () => {
             <h2>
               <AccordionButton fontSize={["20px", "xl"]}>
                 <CustomBox flex="1">
-                  <CustomText fontSize={["20px", "md", "2xl"]} color="white">
+                  <CustomText
+                    fontSize={["20px", "md", "2xl", "3xl"]}
+                    color="white"
+                  >
                     {faq.question}
                   </CustomText>
                 </CustomBox>
@@ -40,7 +47,7 @@ const FaqSection: React.FC = () => {
             </h2>
             <AccordionPanel
               pb={4}
-              fontSize={["20px", "md", "xl"]}
+              fontSize={["20px", "md", "xl", "2xl"]}
               fontWeight="500"
               textAlign="start"
             >

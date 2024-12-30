@@ -12,6 +12,7 @@ export const HEADER_LINKS: TextLink[] = [
 export const SITE_MAP_LINKS: TextLink[] = [
   { name: "Home", url: "/" },
   { name: "Properties", url: "/properties" },
+  { name: "Agents", url: "/agents" },
   { name: "About Us", url: "/about" },
   { name: "Contact", url: "/contact" },
 ];

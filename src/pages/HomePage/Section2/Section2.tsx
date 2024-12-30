@@ -16,6 +16,7 @@ const Section2: React.FC = () => (
       justify="space-between"
       w="80%"
       gap={[20, 4, 4]}
+      my={8}
     >
       {Section2Data.pageGridImages.imageAssets?.map(
         (icon: ImageAsset, index: number) => (

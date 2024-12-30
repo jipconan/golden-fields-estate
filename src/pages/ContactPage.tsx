@@ -6,7 +6,7 @@ const ContactPage: React.FC = () => {
   return (
     <CustomFlex direction="column">
       {/* Contact Section Component */}
-      <CustomFlex minH={["100%", "860px"]} w="80%">
+      <CustomFlex minH={["100%", "100vh"]} w="80%">
         <ContactSection />
       </CustomFlex>
     </CustomFlex>

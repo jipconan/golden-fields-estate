@@ -17,26 +17,26 @@ const formatAvailability = (availability: boolean | string) => {
   return availability === "true" ? "Available" : "Not Available";
 };
 
-const GalleryCard: React.FC<CardProps> = ({ data, onContact }) => {
+const GalleryCard: React.FC<CardProps> = ({ data, onViewDetails }) => {
   return (
     <CustomBox borderWidth="1px" borderRadius="lg" overflow="hidden">
       <CustomImage
         src={data.imageUrl[0]}
         alt={data.name}
-        h={["300px", "8em", "12em", "24em"]}
+        h={["300px", "8em", "12em", "18em", "24em"]}
       />
       <CustomBox p={[6, 4]}>
         <CustomHeader
           as="h3"
-          fontSize={["2xl", "md", "xl", "4xl"]}
+          fontSize={["2xl", "md", "xl", "2xl", "4xl"]}
           minH={["100%", "1em", "1em", "1.5em"]}
           mb={[2, 0]}
         >
           {data.name}
         </CustomHeader>
         <CustomText
-          fontSize={["2xl", "sm", "md", "xl"]}
-          minH={["100%", "1em", "1em", "2.5em"]}
+          fontSize={["2xl", "sm", "md", "xl", "2xl"]}
+          minH={["100%", "2.5em", "1em", "2.5em", "2.5em"]}
           color="gray.500"
           mb={2}
         >
@@ -47,8 +47,8 @@ const GalleryCard: React.FC<CardProps> = ({ data, onContact }) => {
             : "Unknown"}
         </CustomText>
         <CustomText
-          fontSize={["2xl", "xs", "sm", "2xl"]}
-          minH={["100%", "5em", "5em", "4em"]}
+          fontSize={["2xl", "xs", "sm", "lg", "2xl"]}
+          minH={["100%", "4em", "4em", "4em"]}
           fontWeight="300"
         >
           {data.description}
@@ -57,12 +57,10 @@ const GalleryCard: React.FC<CardProps> = ({ data, onContact }) => {
       <CustomButton
         bgColor="lightgrey"
         _hover={{ bg: "grey" }}
-        onClick={onContact}
-        minH={["65px", "2em", "2em", "3.5em"]}
-        fontSize={["20px", "md", "md", "2xl"]}
+        onClick={onViewDetails}
         fontWeight={300}
         borderRadius={0}
-        buttonName="Contact"
+        buttonName="View Details"
         color="black"
         my={0}
         minW="100%"
