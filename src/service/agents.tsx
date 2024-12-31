@@ -23,15 +23,23 @@ export async function getAgentById(id: string): Promise<AgentProps> {
   }
 }
 
-// Fetches agents by category ID and handles potential errors
+// Fetches agents by params and handles potential errors
 export async function getAgentsByCategory(
   param: string
 ): Promise<AgentProps[]> {
   try {
     const agents = await agentsAPI.getAgentsByCategory(param);
+    if (agents.length === 0) {
+      console.warn("No agents found for the given category.");
+      return [];
+    }
     return agents;
   } catch (error) {
-    console.error("Error fetching agents by category:", error);
-    throw error;
+    if (error instanceof Error) {
+      console.error("Error fetching agents by category:", error.message);
+    } else {
+      console.error("Error fetching agents by category:", error);
+    }
+    return []; // Return empty array instead of throwing
   }
 }

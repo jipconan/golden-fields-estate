@@ -9,7 +9,7 @@ const FooterSection: React.FC<{ section: Section }> = ({ section }) => (
     {section.heading ? (
       // Render the heading if it exists
       <CustomHeader
-        fontSize={["20px", "md", "lg", "3xl"]}
+        fontSize={["20px", "md", "lg", "2xl"]}
         mb={2}
         textAlign="start"
         color="white"
@@ -19,7 +19,7 @@ const FooterSection: React.FC<{ section: Section }> = ({ section }) => (
     ) : (
       // If heading is empty, render a hidden placeholder
       <CustomHeader
-        fontSize={["20px", "md", "lg", "3xl"]}
+        fontSize={["20px", "md", "lg", "2xl"]}
         mb={2}
         textAlign="start"
         visibility="hidden"
@@ -42,7 +42,7 @@ const FooterSection: React.FC<{ section: Section }> = ({ section }) => (
             key={index}
             href={link.url}
             aria-label={link.name}
-            fontSize={["20px", "md", "lg", "3xl"]}
+            fontSize={["20px", "md", "lg", "2xl"]}
             fontWeight="300"
             textAlign="start"
             color="white"
@@ -60,7 +60,7 @@ const FooterSection: React.FC<{ section: Section }> = ({ section }) => (
     {/* Render text if the section contains any */}
     {section.texts && (
       <CustomText
-        fontSize={["20px", "md", "lg", "3xl"]}
+        fontSize={["20px", "md", "lg", "2xl"]}
         fontWeight="300"
         textAlign="start"
         color="white"

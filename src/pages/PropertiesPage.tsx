@@ -20,7 +20,7 @@ const PropertiesPage: React.FC = () => {
 
         {/* View More Button */}
         <CustomButton
-          onClick={() => (window.location.href = "/propertiesgallery")}
+          onClick={() => (window.location.href = "/properties")}
           buttonName="View More"
         />
       </CustomFlex>

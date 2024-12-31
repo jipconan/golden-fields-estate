@@ -29,17 +29,21 @@ export async function getAgentById(id: string): Promise<AgentProps> {
 
 // Fetches agents belonging to a specific category.
 export async function getAgentsByCategory(
-  param: string
+  params: string
 ): Promise<AgentProps[]> {
   try {
-    const response = await axios.get<AgentProps[]>(
-      `${BASE_URL}/category/${param}`
-    );
+    const response = await axios.get<AgentProps[]>(`${BASE_URL}?${params}`);
+    if (response.data.length === 0) {
+      console.warn("No agents found for the given category.");
+      return [];
+    }
     return response.data;
   } catch (error) {
-    console.error("Failed to fetch agents by category:", error);
-    throw new Error(
-      "Failed to fetch agents by category. Please try again later."
-    );
+    if (axios.isAxiosError(error)) {
+      console.error("Failed to fetch agents by category:", error.message);
+    } else {
+      console.error("Failed to fetch agents by category:", error);
+    }
+    return []; // Return empty array instead of throwing
   }
 }

@@ -56,7 +56,7 @@ const Header: React.FC<SectionData> = () => {
                   aria-label={link.name}
                   alignContent="start"
                   justifyContent="start"
-                  fontSize={["20px", "sm", "xl", "3xl"]}
+                  fontSize={["20px", "sm", "xl", "2xl"]}
                 >
                   {link.name}
                 </CustomLink>

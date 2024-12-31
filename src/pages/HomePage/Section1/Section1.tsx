@@ -25,7 +25,7 @@ const Section1: React.FC = () => (
     >
       {/* Landing Page - Title */}
       <CustomHeader
-        fontSize={["50px", "5xl", "6xl", "10em"]}
+        fontSize={["50px", "5xl", "6xl", "9xl"]}
         fontWeight="700"
         fontFamily="cormorantSc"
         textShadow={[
@@ -69,10 +69,10 @@ const Section1: React.FC = () => (
                 imageProps={{
                   p: 2,
                   bg: "iconGreen",
-                  blockSize: ["50px", "4em", "5em", "12em"],
+                  blockSize: ["50px", "4em", "5em", "8em"],
                 }}
                 headingProps={{
-                  fontSize: ["15px", "lg", "xl", "4xl"],
+                  fontSize: ["15px", "lg", "xl", "3xl"],
                   w: "80%",
                   color: "white",
                   bgColor: "rgba(0, 0, 0, 0.5)",

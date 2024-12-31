@@ -16,9 +16,9 @@ const CustomButton: React.FC<CustomButtonProps> = ({
       bgColor="teal.500"
       _hover={{ bg: "teal.700" }}
       color="white"
-      minW={["200px", "20em"]}
+      minW={["200px", "15em"]}
       minH={["60px", "50px", "50px", "60px", "80px"]}
-      fontSize={["20px", "lg", "lg", "xl", "3xl"]}
+      fontSize={["20px", "lg", "lg", "xl", "2xl"]}
       my={8}
       onClick={onClick}
       {...props}

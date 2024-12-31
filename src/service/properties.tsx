@@ -29,9 +29,17 @@ export async function getPropertiesByCategory(
 ): Promise<PropertyProps[]> {
   try {
     const properties = await propertiesAPI.getPropertiesByCategory(param);
+    if (properties.length === 0) {
+      console.warn("No properties found for the given category.");
+      return [];
+    }
     return properties;
   } catch (error) {
-    console.error("Error fetching properties by category:", error);
-    throw error;
+    if (error instanceof Error) {
+      console.error("Error fetching properties by category:", error.message);
+    } else {
+      console.error("Error fetching properties by category:", error);
+    }
+    return []; // Return empty array instead of throwing
   }
 }
