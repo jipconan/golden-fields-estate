@@ -10,7 +10,7 @@ import {
 import { useGallery } from "../../../components/Hooks/useGallery";
 
 const Section4: React.FC = () => {
-  const { datas, loading, LoadingComponent } = useGallery("agents");
+  const { datas, loading, LoadingComponent } = useGallery("agents", "");
 
   if (loading) {
     return <LoadingComponent />;
