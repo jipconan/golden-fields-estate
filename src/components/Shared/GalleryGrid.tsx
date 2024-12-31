@@ -1,5 +1,5 @@
 import React from "react";
-import { CustomFlex, GalleryCard, CustomButton } from "../Shared";
+import { CustomFlex, GalleryCard, CustomButton, CustomText } from "../Shared";
 import { AgentProps, PropertyProps } from "../../types/generalTypes";
 import { useBreakpointValue } from "@chakra-ui/react";
 
@@ -21,8 +21,22 @@ const GalleryGrid: React.FC<GalleryGridProps> = ({
 }) => {
   const itemsToSlice = useBreakpointValue([4, 2, 2, 3, 3, 3, 4]) || 4;
 
+  // console.log("GalleryGrid datas", datas);
+
   return (
     <>
+      {!datas?.length && (
+        <CustomFlex h="40vh">
+          <CustomText
+            fontSize="2em"
+            textAlign="center"
+            alignContent={"center"}
+            justifyContent={"center"}
+          >
+            No data available
+          </CustomText>
+        </CustomFlex>
+      )}
       {!galleryGridCheck && datas && (
         <CustomFlex wrap="wrap" direction={["column", "row"]}>
           {datas.slice(0, itemsToSlice).map((data, index) => (

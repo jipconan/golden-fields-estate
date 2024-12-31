@@ -23,19 +23,19 @@ const GalleryCard: React.FC<CardProps> = ({ data, onViewDetails }) => {
       <CustomImage
         src={data.imageUrl[0]}
         alt={data.name}
-        h={["300px", "8em", "12em", "18em", "24em"]}
+        h={["300px", "8em", "12em", "18em", "20em"]}
       />
       <CustomBox p={[6, 4]}>
         <CustomHeader
           as="h3"
-          fontSize={["2xl", "md", "xl", "2xl", "4xl"]}
+          fontSize={["2xl", "md", "xl", "2xl", "3xl"]}
           minH={["100%", "1em", "1em", "1.5em"]}
           mb={[2, 0]}
         >
           {data.name}
         </CustomHeader>
         <CustomText
-          fontSize={["2xl", "sm", "md", "xl", "2xl"]}
+          fontSize={["2xl", "sm", "md", "xl", "xl"]}
           minH={["100%", "2.5em", "1em", "2.5em", "2.5em"]}
           color="gray.500"
           mb={2}
@@ -47,7 +47,7 @@ const GalleryCard: React.FC<CardProps> = ({ data, onViewDetails }) => {
             : "Unknown"}
         </CustomText>
         <CustomText
-          fontSize={["2xl", "xs", "sm", "lg", "2xl"]}
+          fontSize={["2xl", "xs", "sm", "lg", "xl"]}
           minH={["100%", "4em", "4em", "4em"]}
           fontWeight="300"
         >

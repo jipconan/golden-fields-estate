@@ -16,14 +16,20 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Pages.HomePage />} />
-            <Route path="/properties" element={<Pages.PropertiesPage />} />
+
             <Route
-              path="/propertiesgallery"
+              path="/featureproperties"
+              element={<Pages.PropertiesPage />}
+            />
+            <Route
+              path="/properties"
               element={<Pages.PropertiesGalleryPage />}
             />
             <Route path="/property/:id" element={<Pages.PropertyPage />} />
+
             <Route path="/agents" element={<Pages.AgentGalleryPage />} />
             <Route path="/agent/:id" element={<Pages.AgentPage />} />
+
             <Route path="/about" element={<Pages.AboutPage />} />
             <Route path="/contact" element={<Pages.ContactPage />} />
           </Routes>

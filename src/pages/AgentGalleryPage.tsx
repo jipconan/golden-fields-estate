@@ -2,9 +2,12 @@ import { SearchBar, GalleryGrid } from "../components/Shared";
 import { CustomFlex, CustomHeader } from "../components/Shared";
 import { useGallery } from "../components/Hooks/useGallery";
 import useScrollbarWidth from "../utilties/scrollbarWidth";
+import { useSearchParams } from "react-router-dom";
 
 const AgentGalleryPage: React.FC = () => {
   const scrollbarWidth = useScrollbarWidth();
+  const [searchParams] = useSearchParams();
+
   const {
     datas,
     currentDatas,
@@ -12,7 +15,9 @@ const AgentGalleryPage: React.FC = () => {
     handleViewMore,
     loading,
     LoadingComponent,
-  } = useGallery("agents");
+  } = useGallery("agents", searchParams.toString() || "");
+
+  // console.log("AgentGalleryPage searchParams", searchParams);
 
   if (loading) {
     return <LoadingComponent />;
@@ -22,7 +27,7 @@ const AgentGalleryPage: React.FC = () => {
     <CustomFlex
       direction="column"
       w={["100%", `calc(100vw - ${scrollbarWidth}px)`]}
-      minH={[null, "800px"]}
+      minH={["100%", "400px"]}
       my={8}
     >
       <CustomFlex direction="column" w="80%">

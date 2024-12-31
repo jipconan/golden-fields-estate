@@ -31,17 +31,21 @@ export async function getPropertyById(id: string): Promise<PropertyProps> {
 
 // Fetches properties belonging to a specific category.
 export async function getPropertiesByCategory(
-  param: string
+  params: string
 ): Promise<PropertyProps[]> {
   try {
-    const response = await axios.get<PropertyProps[]>(
-      `${BASE_URL}/type/${param}`
-    );
+    const response = await axios.get<PropertyProps[]>(`${BASE_URL}?${params}`);
+    if (response.data.length === 0) {
+      console.warn("No properties found for the given category.");
+      return [];
+    }
     return response.data;
   } catch (error) {
-    console.error("Failed to fetch properties by category:", error);
-    throw new Error(
-      "Failed to fetch properties by category. Please try again later."
-    );
+    if (axios.isAxiosError(error)) {
+      console.error("Failed to fetch properties by category:", error.message);
+    } else {
+      console.error("Failed to fetch properties by category:", error);
+    }
+    return []; // Return empty array instead of throwing
   }
 }
