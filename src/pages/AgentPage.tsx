@@ -16,7 +16,7 @@ const AgentPage: React.FC = () => {
   const [data, setData] = useState<AgentProps>();
   const { loading, setLoading, LoadingComponent } = useLoading();
 
-  const uniformSize = ["xl", "xs", "sm", "lg", "3xl"];
+  const uniformSize = ["xl", "xs", "sm", "lg", "2xl"];
 
   useEffect(() => {
     const fetchData = async () => {
@@ -123,7 +123,7 @@ const AgentPage: React.FC = () => {
             <CustomImage
               src={data.imageUrl[0]}
               alt={`Agent image ${data.name}`}
-              h={["20em", "15em", "20em", "30em", "26em", "30em"]}
+              h={["20em", "15em", "20em", "26em", "26em", "26em"]}
               objectFit="cover"
             />
           </CustomFlex>
