@@ -25,7 +25,8 @@ const CustomMenuButton: React.FC<MenuButtonProps> = (props) => (
     whiteSpace="normal"
     textOverflow="clip"
     color="white"
-    mt={8}
+    paddingStart={0}
+    paddingEnd={0}
     {...props}
   />
 );
