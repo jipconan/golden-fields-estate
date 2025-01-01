@@ -44,6 +44,7 @@ const ContactSection: React.FC = () => {
               <Input
                 type="text"
                 h={["50px", "2.5em", "2.5em", "3em"]}
+                w={["100%", "20em", "30em", "100%", "100%", "25em"]}
                 fontSize={["20px", "lg", "xl", "2xl"]}
                 fontWeight="100"
               />
