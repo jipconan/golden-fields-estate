@@ -17,6 +17,26 @@ This web application allows users to browse and query agents and properties effi
 
 You can access the deployed URL at [Golden Fields Estate]([https://golden-fields-estate.onrender.com/)).
 
+## Website Screenshots
+
+|                                                                           **Landing Page #1**                                                                             |                                                                          **Landing Page #2**                                                                              |
+| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------: |    
+|             ![Landing Page 1](https://res.cloudinary.com/dulxbpc3s/image/upload/v1735720647/golden-fields/readme/golden-field-photoshoplandingpage_1_dqcbvh.jpg)          |            ![Landing Page 2](https://res.cloudinary.com/dulxbpc3s/image/upload/v1735720645/golden-fields/readme/golden-field-photoshoplandingpage_2_fkzd2z.jpg)           |
+
+
+|                                                                       **Feature Properties Page**                                                                         |                                                                       **Properties Gallery Page**                                                                         |
+| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------: |    
+|         ![Feature Property Page](https://res.cloudinary.com/dulxbpc3s/image/upload/v1735719056/golden-fields/readme/golden-field-photoshopfeatureproperty_o87kpy.jpg)     |     ![Properties Gallery Page](https://res.cloudinary.com/dulxbpc3s/image/upload/v1735719056/golden-fields/readme/golden-field-photoshoppropertiesgallery_egsijb.jpg)     |
+
+|                                                                        **Agents Gallery Page**                                                                            |                                                                             **About Page**                                                                                |
+| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------: |    
+|          ![Agents Gallery Page](https://res.cloudinary.com/dulxbpc3s/image/upload/v1735719049/golden-fields/readme/golden-field-photoshopagentsgallery_u8lfkx.jpg)        |                ![About Page](https://res.cloudinary.com/dulxbpc3s/image/upload/v1735719050/golden-fields/readme/golden-field-photoshopaboutpage_jgfphk.jpg)               |
+
+|                                                                                          **Contact Page**                                                                                        |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|      <a href="url"><img src="https://res.cloudinary.com/dulxbpc3s/image/upload/v1735719048/golden-fields/readme/golden-field-photoshopcontactpage_clq1tb.jpg" align="center" width="50%" ></a>   |
+
+
 ## Key Features
 
 - **Agent-Property Linking:**
