@@ -20,7 +20,7 @@ const PropertyPage: React.FC = () => {
   const { loading, setLoading, LoadingComponent } = useLoading();
   const [selectedImage, setSelectedImage] = useState<number>(0);
 
-  const uniformSize = ["md", "xs", "sm", "lg", "2xl", "2xl", "3xl"];
+  const uniformSize = ["md", "xs", "sm", "lg", "2xl", "2xl", "2xl"];
 
   const handlePrevImage = () => {
     if (data) {
@@ -115,8 +115,8 @@ const PropertyPage: React.FC = () => {
                 src={data.imageUrl[selectedImage]}
                 alt={`Property image ${data.imageUrl[selectedImage]}`}
                 objectFit="cover"
-                w={["20em", "20em", "25em", "25em", "20em", "25em", "30em"]} // Consistent width
-                h={["15em", "15em", "15em", "15em", "15em", "15em", "20em"]}
+                w={["20em", "20em", "25em", "25em", "20em", "25em", "28em"]} // Consistent width
+                h={["15em", "15em", "15em", "15em", "15em", "15em", "16em"]}
               />
 
               <CustomFlex
@@ -162,8 +162,8 @@ const PropertyPage: React.FC = () => {
                   key={index}
                   src={url}
                   alt={`Thumbnail ${index + 1}`}
-                  w={["50px", "5em", "6em", "7em", "7em"]}
-                  blockSize={["50px", "5em", "6em", "7em", "7em"]}
+                  w={["50px", "5em", "5em", "5em", "5em"]}
+                  blockSize={["50px", "5em", "5em", "5em", "5em"]}
                   objectFit="cover"
                   border={
                     selectedImage === index ? "0.25em solid teal" : "none"
