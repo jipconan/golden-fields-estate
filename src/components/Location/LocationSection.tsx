@@ -33,7 +33,7 @@ const LocationSection: React.FC = () => {
         </CustomFlex>
         <CustomImage
           src={LOCATION_IMAGE.image}
-          blockSize={["300px", "12em", "13em", "30em", "40em"]}
+          blockSize={["300px", "12em", "13em", "30em", "35em"]}
         />
         <SearchBar type="properties" />
       </CustomFlex>
