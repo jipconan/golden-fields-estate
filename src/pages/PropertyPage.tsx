@@ -115,8 +115,8 @@ const PropertyPage: React.FC = () => {
                 src={data.imageUrl[selectedImage]}
                 alt={`Property image ${data.imageUrl[selectedImage]}`}
                 objectFit="cover"
-                w={["20em", "20em", "25em", "25em", "20em", "25em", "28em"]} // Consistent width
-                h={["15em", "15em", "15em", "15em", "15em", "15em", "16em"]}
+                w={["20em", "20em", "25em", "25em", "20em", "25em", "32em"]} // Consistent width
+                h={["15em", "15em", "15em", "15em", "15em", "15em", "18em"]}
               />
 
               <CustomFlex
