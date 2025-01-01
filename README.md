@@ -1,50 +1,100 @@
-# React + TypeScript + Vite
+# Golden Fields Estate
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Summary
 
-Currently, two official plugins are available:
+This web application allows users to browse and query agents and properties efficiently. The system provides a responsive interface for users to explore detailed information about agents and their linked properties, or vice versa, using various query options.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Collaboration
 
-## Expanding the ESLint configuration
+- **UI/UX Designer:**
+  </br>
+  My friend Hachi brought creativity and expertise to design the interface, ensuring it looks great and is easy to use.
+- **Full Stack Developer:**
+   </br>
+  I handled all the coding and made sure everything worked smoothly from front-end to back-end.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Deployed URL
 
-- Configure the top-level `parserOptions` property like this:
+You can access the deployed URL at [Golden Fields Estate]([https://golden-fields-estate.onrender.com/)).
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Key Features
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- **Agent-Property Linking:**
+  </br>
+  Manage relationships where agents can have a list of properties, and properties can be tied to multiple agents.
+- **Database Integration:**
+  </br>
+  Store and retrieve JSON data using MongoDB.
+- **Image Management:**
+  </br>
+  Store property images securely using Cloudinary.
+- **Responsive Design:**
+  </br>
+  Ensure the application adapts to different devices and screen sizes for optimal user experience.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Technologies Used
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Front-End
+
+- **Project Setup**
+  - **Vite**
+  - **React**
+  - **TypeScript**
+- **UI Framework**
+  - **Chakra UI**
+- **State Management**
+  - **React Context API**
+
+### Back-End
+
+- **Node.js**
+- **Express.js**
+- **MongoDB:**
+  </br>
+  For managing JSON data.
+- **Cloudinary:**
+  </br>
+  For storing property images (no API calls involved).
+
+### Tools and Dependencies
+
+- **dotenv:**
+  </br>
+  Manage environment variables securely.
+
+## Challenges Faced
+
+### Database Management
+
+- **Establishing Links Between Entities:**
+  </br>
+  Implementing a system to ensure that agents and properties can be dynamically linked and queried efficiently.
+
+### Image Management
+
+- **Cloudinary Integration:**
+  </br>
+  Setting up secure and efficient image storage without direct API calls.
+
+## Next Steps
+
+### Planned Future Enhancements
+
+- **Advanced Search Filters:**
+  </br>
+  Allow users to filter properties based on location, price range, and other attributes.
+- **Notifications:**
+  </br>
+  Add email or SMS notifications for updates related to properties and agents.
+- **Analytics Dashboard:**
+  </br>
+  Provide insights into agent performance and property statistics.
+- **User Roles:**
+  </br>
+  Implement role-based access to ensure data security.
+- **Mobile App:**
+  </br>
+  Extend functionality to a mobile platform for on-the-go access.
+
+For more details and updates, stay tuned to the repository.
+
