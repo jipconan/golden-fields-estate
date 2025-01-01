@@ -32,11 +32,9 @@ You can access the deployed URL at [Golden Fields Estate](https://golden-fields-
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |    
 |       <a href="url"><img src="https://res.cloudinary.com/dulxbpc3s/image/upload/v1735719050/golden-fields/readme/golden-field-photoshopaboutpage_jgfphk.jpg" align="center" width="200px" ></a>    |     <a href="url"><img src="https://res.cloudinary.com/dulxbpc3s/image/upload/v1735719048/golden-fields/readme/golden-field-photoshopcontactpage_clq1tb.jpg" align="center" width="200px" ></a>    |
 
-## Mobile Screen Preview
+## Mobile Screen Preview (Try it!)
 
-|                                                                                        **Landing Page #1**                                                                                         |                                                                                   **Properties Gallery Page**                                                                                      |                                                                                      **Agents Gallery Page**                                                                                       |                                                                                           **About Page**                                                                                           | 
-| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |        
-|            <a href="url"><img src="https://res.cloudinary.com/dulxbpc3s/image/upload/v1735722266/golden-fields/readme/gif/landingpage_gif_bw51jq.gif" align="center" width="200px" ></a>           |           <a href="url"><img src="https://res.cloudinary.com/dulxbpc3s/image/upload/v1735722465/golden-fields/readme/gif/propertiespage_gif_w7bsjk.gif" align="center" width="200px" ></a>         |             <a href="url"><img src="https://res.cloudinary.com/dulxbpc3s/image/upload/v1735722451/golden-fields/readme/gif/agentspage_gif_wpk0vj.gif" align="center" width="200px" ></a>           |             <a href="url"><img src="https://res.cloudinary.com/dulxbpc3s/image/upload/v1735722263/golden-fields/readme/gif/aboutpage_gif_ioqme5.gif" align="center" width="200px" ></a>            |
+<a href="url"><img src="https://res.cloudinary.com/dulxbpc3s/image/upload/v1735724047/golden-fields/readme/gif/mobiletest_r70dwl.gif" align="center" width="200px" ></a> 
 
 ## Key Features
 
@@ -101,6 +99,9 @@ You can access the deployed URL at [Golden Fields Estate](https://golden-fields-
 
 ### Planned Future Enhancements
 
+- **Google Map API intergration:**
+  </br>
+  Allow users to see the location on the google map.
 - **Advanced Search Filters:**
   </br>
   Allow users to filter properties based on location, price range, and other attributes.
