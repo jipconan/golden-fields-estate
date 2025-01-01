@@ -96,7 +96,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ type }) => {
   ];
 
   return (
-    <CustomFlex direction="row" minH={["100%", "100px"]}>
+    <CustomFlex direction="row" minH={["100%", "100px"]} my={12}>
       {categories.map((category, index) => (
         <Menu key={index}>
           {/* Custom button for each category */}
